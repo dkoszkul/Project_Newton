@@ -1,6 +1,6 @@
 function [y] = Ackley()
 %Goldstein-price Summary of this function goes here
-%   Detailed explanation goes here
+%   Detailed explanation goes here - proba zmiany
 syms x x1 x2 x3;
 
     c = 2*pi;
