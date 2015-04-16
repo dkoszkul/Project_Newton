@@ -379,20 +379,23 @@ max_iteracji = 100;
 %parametry metody Goldstein'a
 t_l=0; %wspolczynniki kroku
 t_r=9;
-beta = 0.25; %wspolczynnik testu
+beta = 0.4; %wspolczynnik testu
 licznik_iteracji_goldstein = 0;   %warunek stopu (2)
 max_iteracji_goldstein = 10;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+t=4.5;
 %%%%%% tutaj powinna byc petla calego algorytmu %%%%%%%%%%
 X= X_temp;
 while 1
     %zachowamy sobie w pamieci d jako rownania symboliczne, a podstawiac
     %bedziemy konkretne punkty do zmiennej d_val
     d_val = evaluated_fx(d, X); %liczy wartosc kieruneku w punktach x1, x2
-    
-    if(d_val'*d_val <= epsilon || licznik_iteracji>max_iteracji) %gradient jest wystarczajaco blisko zera
+    sprintf('X: %d',X)
+    sprintf('Wartosc y: %d',evaluated_fx(y, X))
+     sprintf('Wartosc d_val*d_val:%d ::: %d',d_val,d_val'*d_val)
+    sprintf('\n')
+    if(d_val'*d_val <= epsilon || licznik_iteracji>max_iteracji) %  gradient jest wystarczajaco blisko zera
         %(tzn. zerowy spadek w kazdym kierunku a wiec minimum)
         break
     end
@@ -402,34 +405,34 @@ while 1
     
     % krok 1 - oblicz pochodna w kierunku
     p=evaluated_fx(G, X)'*d_val;
-    while 1
+   % while 1
         % krok 2 - obliczanie f(x0) oraz f(x0+ td);
         t=0.5*(t_l+t_r);
         f_x_td=evaluated_fx(y, X + t*d_val);
         f_x = evaluated_fx(y, X);
         % krok 3 - sprawdzanie warunku mniejszosci/wiekszosci
         if(f_x_td < (f_x + (1-beta)*p*t))
-            t_l=t
+            t_l=t;
         else
             % krok 4 - t_r => t
             if(f_x_td > (f_x + beta*p*t))                
                 t_r=t;              
-            else
-                break
+%            else                              %Ten break wszystko psuje...
+%                 break
             end
         end
-        if(licznik_iteracji_goldstein>max_iteracji_goldstein)
-            break
-        end
+       % if(licznik_iteracji_goldstein>max_iteracji_goldstein)
+       %     break
+       % end
         %zwiekszanie licznika iteracji dla petli minimum w kierunku
         licznik_iteracji_goldstein=licznik_iteracji_goldstein+1;
-    end
+    %end
     alfa = t;
     %%%%%%%%%% %metoda nimum w kierunku %%%%%%%%%%%%%%
     
     X = X+alfa*d_val;
     
-    licznik_iteracji=licznik_iteracji+1
+    licznik_iteracji=licznik_iteracji+1;
     tekst =[tekst, sprintf('%d:   %d ',licznik_iteracji,X)];
      tekst =[tekst, sprintf('\n')];
     set(handles.iteracje_Edit,'String',tekst)

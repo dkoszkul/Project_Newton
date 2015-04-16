@@ -54,6 +54,7 @@ function gui_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for gui
 handles.current_data = '';
 set(handles.pushbutton2,'Enable','off')
+set(handles.iteracje_Edit,'String',sprintf('%s:\n','Iterations'))
 handles.output = hObject;
 
 % Update handles structure
@@ -368,7 +369,7 @@ H=hessian(y, [x1 x2]); %liczy hessian symbolicznie
 d = -inv(H)*G;
 
 X_temp = [handles.start_x1; handles.start_x2];
-
+tekst=[];
 %parametry metody newtona
 epsilon = 10^-10;        %warunek stopu (1)
 licznik_iteracji = 0;   %warunek stopu (2)
@@ -429,8 +430,13 @@ while 1
     X = X+alfa*d_val;
     
     licznik_iteracji=licznik_iteracji+1
+    tekst =[tekst, sprintf('%d:   %d ',licznik_iteracji,X)];
+     tekst =[tekst, sprintf('\n')];
+    set(handles.iteracje_Edit,'String',tekst)
 end
 X
+set(handles.result_Edit,'String',num2str(X))
+tekst
 %%%%%% tutaj powinna byc petla calego algorytmu %%%%%%%%%%
 
 
@@ -439,7 +445,7 @@ function iteracje_Edit_Callback(hObject, eventdata, handles)
 % hObject    handle to iteracje_Edit (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-set(handles.pushbutton2,'Enable','off')
+
 % Hints: get(hObject,'String') returns contents of iteracje_Edit as text
 %        str2double(get(hObject,'String')) returns contents of iteracje_Edit as a double
 
