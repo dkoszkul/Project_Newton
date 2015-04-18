@@ -22,7 +22,7 @@ function varargout = gui(varargin)
 
 % Edit the above text to modify the response to help gui
 
-% Last Modified by GUIDE v2.5 16-Apr-2015 21:25:08
+% Last Modified by GUIDE v2.5 18-Apr-2015 20:27:18
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -55,6 +55,10 @@ function gui_OpeningFcn(hObject, eventdata, handles, varargin)
 handles.current_data = '';
 set(handles.pushbutton2,'Enable','off')
 set(handles.iteracje_Edit,'String',sprintf('%s:\n','Iterations'))
+set(handles.x1From,'String',-6)
+set(handles.x1To,'String',6)
+set(handles.x2From,'String',-6)
+set(handles.x2To,'String',6)
 handles.output = hObject;
 
 % Update handles structure
@@ -111,28 +115,31 @@ end
 
 % --- Executes on button press in drawButton.
 function drawButton_Callback(hObject, eventdata, handles)
-% hObject    handle to drawButton (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-x=-10:0.001:10;
+hold off; %reset plota
+%---------------pobranie zakresów dla plota------%
+x1From = str2double(get(handles.x1From,'String'));
+x1To = str2double(get(handles.x1To,'String'));
+x2From = str2double(get(handles.x2From,'String'));
+x2To = str2double(get(handles.x2To,'String'));
+
 switch handles.current_data
     case 'Function with four local minima'
-        [handles.results]=i_1_FourLocalMinima();
+        [handles.results]=i_1_FourLocalMinima(x1From,x1To,x2From,x2To);
         set(handles.functionEquation,'String','x1^4+x2^4-0.62*x1^2-0.62*x2^2')
     case 'Rosenbrock function'
-        [handles.results]=Function_RosenBrock();
+        [handles.results]=Function_RosenBrock(x1From,x1To,x2From,x2To);
         set(handles.functionEquation,'String','100*(x2-x1^2)^2+(1-x1)^2');
     case 'Goldsteina-Price function with four local minima'
-        [handles.results]=Goldstein_price();
+        [handles.results]=Goldstein_price(x1From,x1To,x2From,x2To);
         set(handles.functionEquation,'String','(30+(1+(x1 + x2 + 1)^2)*19 - 14*x1 + 3*x1^2 - 14*x2 + 6*x1*x2 + 3*x2^2...');
     case 'Himmelblau modified function'
-        [handles.results]=Himmelblau();
+        [handles.results]=Himmelblau(x1From,x1To,x2From,x2To);
         set(handles.functionEquation,'String','(x1^2 + x2 - 11)^2 + (x1 + x2^2 - 7)^2');
     case 'Ackley function'
-        [handles.results]=Ackley();
+        [handles.results]=Ackley(x1From,x1To,x2From,x2To);
         set(handles.functionEquation,'String','-a*e(-b*sqrt((x1^2 + x2^2)/2)-e((cos(c*x1) + cos(c*x2))/2)+a+e');
     case 'Rastrigin function'
-        [handles.results]=Rastrigin();
+        [handles.results]=Rastrigin(x1From,x1To,x2From,x2To);
         set(handles.functionEquation,'String','x1^2 + x2^2 - 10*cos(2*pi*x1) - 10*cos(2*pi*x2) + 20');
 end
 
@@ -374,7 +381,7 @@ X_temp = [handles.start_x1; handles.start_x2];
 epsilon = 10^-10;        %warunek stopu (1)
 licznik_iteracji = 0;   %warunek stopu (2)
 max_iteracji = 100;
-tekst=cell(2.1*max_iteracji,1);
+tekst=cell(2*max_iteracji,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 %parametry metody Goldstein'a
@@ -397,7 +404,7 @@ while 1
     d_val = evaluated_fx(d, X); %liczy wartosc kieruneku w punktach x1, x2
     sprintf('X: %d',X)
     sprintf('Wartosc y: %d',evaluated_fx(y, X))
-     sprintf('Wartosc d_val*d_val:%d ::: %d',d_val,d_val'*d_val)
+    sprintf('Wartosc d_val*d_val:%d ::: %d',d_val,d_val'*d_val)
     sprintf('\n')
     if(d_val'*d_val <= epsilon || licznik_iteracji>max_iteracji) %  gradient jest wystarczajaco blisko zera
         %(tzn. zerowy spadek w kazdym kierunku a wiec minimum)
@@ -418,12 +425,12 @@ while 1
         if(f_x_td < (f_x + (1-beta)*p*t))
             t_l=t;
         end
-            % krok 4 - t_r => t
-        if(f_x_td > (f_x + beta*p*t))                
-            t_r=t;             
+        % krok 4 - t_r => t
+        if(f_x_td > (f_x + beta*p*t))
+            t_r=t;
         end
         if((f_x_td >= (f_x + (1-beta)*p*t)) && (f_x_td <= (f_x + beta*p*t)))
-            break 
+            break
         end
         if(licznik_iteracji_goldstein>max_iteracji_goldstein)
             break
@@ -440,7 +447,7 @@ while 1
     licznik_iteracji=licznik_iteracji+1;
     sprintf('%d:   %d ',licznik_iteracji,X)
     tekst(i) =cellstr(sprintf('%d:   %d ',licznik_iteracji,X));
-     i=i+1;
+    i=i+1;
     set(handles.iteracje_Edit,'String',tekst)
 end
 X
@@ -485,6 +492,98 @@ function result_Edit_Callback(hObject, eventdata, handles)
 % --- Executes during object creation, after setting all properties.
 function result_Edit_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to result_Edit (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function x1From_Callback(hObject, eventdata, handles)
+% hObject    handle to x1From (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of x1From as text
+%        str2double(get(hObject,'String')) returns contents of x1From as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function x1From_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to x1From (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function x1To_Callback(hObject, eventdata, handles)
+% hObject    handle to x1To (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of x1To as text
+%        str2double(get(hObject,'String')) returns contents of x1To as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function x1To_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to x1To (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function x2From_Callback(hObject, eventdata, handles)
+% hObject    handle to x2From (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of x2From as text
+%        str2double(get(hObject,'String')) returns contents of x2From as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function x2From_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to x2From (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function x2To_Callback(hObject, eventdata, handles)
+% hObject    handle to x2To (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of x2To as text
+%        str2double(get(hObject,'String')) returns contents of x2To as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function x2To_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to x2To (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
