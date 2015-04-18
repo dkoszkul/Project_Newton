@@ -405,7 +405,7 @@ while 1
     
     % krok 1 - oblicz pochodna w kierunku
     p=evaluated_fx(G, X)'*d_val;
-   % while 1
+    while 1
         % krok 2 - obliczanie f(x0) oraz f(x0+ td);
         t=0.5*(t_l+t_r);
         f_x_td=evaluated_fx(y, X + t*d_val);
@@ -413,20 +413,20 @@ while 1
         % krok 3 - sprawdzanie warunku mniejszosci/wiekszosci
         if(f_x_td < (f_x + (1-beta)*p*t))
             t_l=t;
-        else
-            % krok 4 - t_r => t
-            if(f_x_td > (f_x + beta*p*t))                
-                t_r=t;              
-%            else                              %Ten break wszystko psuje...
-%                 break
-            end
         end
-       % if(licznik_iteracji_goldstein>max_iteracji_goldstein)
-       %     break
-       % end
+            % krok 4 - t_r => t
+        if(f_x_td > (f_x + beta*p*t))                
+            t_r=t;             
+        end
+        if((f_x_td >= (f_x + (1-beta)*p*t)) && (f_x_td <= (f_x + beta*p*t)))
+            break 
+        end
+        if(licznik_iteracji_goldstein>max_iteracji_goldstein)
+            break
+        end
         %zwiekszanie licznika iteracji dla petli minimum w kierunku
         licznik_iteracji_goldstein=licznik_iteracji_goldstein+1;
-    %end
+    end
     alfa = t;
     %%%%%%%%%% %metoda nimum w kierunku %%%%%%%%%%%%%%
     
