@@ -269,10 +269,16 @@ function OwnFunction_Callback(hObject, eventdata, handles)
 % hObject    handle to OwnFunction (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+hold off; %reset plota
+%---------------pobranie zakresów dla plota------%
+x1From = str2double(get(handles.x1From,'String'));
+x1To = str2double(get(handles.x1To,'String'));
+x2From = str2double(get(handles.x2From,'String'));
+x2To = str2double(get(handles.x2To,'String'));
 syms x y x1 x2 x3
 f = get(hObject,'String');
 symvar(f) %wykrywa symbole zdefiniowane w funkcji zadanej
-ezmesh(f); %rysuje funkcje symboliczne
+ezcontour(f,[x1From,x1To,x2From,x2To]); %rysuje funkcje symboliczne
 title([]); %usuwa tytu³ dla ezmesh. jakis lipny strasznie siê pojawia
 handles.results = sym(f);
 guidata(hObject,handles); %update "handles'ow"
