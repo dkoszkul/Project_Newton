@@ -374,7 +374,7 @@ X_temp = [handles.start_x1; handles.start_x2];
 epsilon = 10^-10;        %warunek stopu (1)
 licznik_iteracji = 0;   %warunek stopu (2)
 max_iteracji = 100;
-tekst=cell(2.1*max_iteracji,1);
+tekst=char(2.1*max_iteracji,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 %parametry metody Goldstein'a
@@ -439,8 +439,9 @@ while 1
     plot(X(1),X(2),'*');
     licznik_iteracji=licznik_iteracji+1;
     sprintf('%d:   %d ',licznik_iteracji,X)
-    tekst(i) =cellstr(sprintf('%d:   %d ',licznik_iteracji,X));
-     i=i+1;
+    tekst(i) =sprintf('%d:   %d ',licznik_iteracji,X);
+     tekst(i+1) =sprintf('\n');
+     i=i+2;
     set(handles.iteracje_Edit,'String',tekst)
 end
 X
