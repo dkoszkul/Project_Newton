@@ -22,7 +22,7 @@ function varargout = gui(varargin)
 
 % Edit the above text to modify the response to help gui
 
-% Last Modified by GUIDE v2.5 18-Apr-2015 20:27:18
+% Last Modified by GUIDE v2.5 20-Apr-2015 19:17:36
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -67,6 +67,13 @@ guidata(hObject, handles);
 % UIWAIT makes gui wait for user response (see UIRESUME)
 % uiwait(handles.figure1);
 set(handles.pushbutton2,'Enable','off'); % wylaczenie przycisku "compute"
+
+%wylaczenie x3 x4 x5 x6
+set(handles.edit16_x3,'Enable','off');
+set(handles.edit17_x4,'Enable','off');
+set(handles.edit18_x5,'Enable','off');
+set(handles.edit19_x6,'Enable','off');
+
 handles.results = '';
 handles.start_x1 = 'x1';
 handles.start_x2 = 'x2';
@@ -121,7 +128,10 @@ x1From = str2double(get(handles.x1From,'String'));
 x1To = str2double(get(handles.x1To,'String'));
 x2From = str2double(get(handles.x2From,'String'));
 x2To = str2double(get(handles.x2To,'String'));
-
+set(handles.edit16_x3,'Enable','off');
+set(handles.edit17_x4,'Enable','off');
+set(handles.edit18_x5,'Enable','off');
+set(handles.edit19_x6,'Enable','off');
 switch handles.current_data
     case 'Function with four local minima'
         [handles.results]=i_1_FourLocalMinima(x1From,x1To,x2From,x2To);
@@ -129,6 +139,9 @@ switch handles.current_data
     case 'Rosenbrock function'
         [handles.results]=Function_RosenBrock(x1From,x1To,x2From,x2To);
         set(handles.functionEquation,'String','100*(x2-x1^2)^2+(1-x1)^2');
+    case 'Zangwill function'
+        [handles.results]=Zangwill(x1From,x1To,x2From,x2To);
+        set(handles.functionEquation,'String','(x1-x2+x3)^2+(-x1+x2+x3)^2+(x1+x2-x3)^2');
     case 'Goldsteina-Price function with four local minima'
         [handles.results]=Goldstein_price(x1From,x1To,x2From,x2To);
         set(handles.functionEquation,'String','(30+(1+(x1 + x2 + 1)^2)*19 - 14*x1 + 3*x1^2 - 14*x2 + 6*x1*x2 + 3*x2^2...');
@@ -141,6 +154,28 @@ switch handles.current_data
     case 'Rastrigin function'
         [handles.results]=Rastrigin(x1From,x1To,x2From,x2To);
         set(handles.functionEquation,'String','x1^2 + x2^2 - 10*cos(2*pi*x1) - 10*cos(2*pi*x2) + 20');
+    case 'Geem test function'
+        [handles.results]=Geem(x1From,x1To,x2From,x2To);
+        set(handles.functionEquation,'String','4*x1^2-2.1*x1^4+(1/3)*x1^6+x1*x2-4*x2^2+4*x2^4');
+    case 'Sin-Cos-Exp function'
+        [handles.results]=sin_exp(x1From,x1To,x2From,x2To);
+        set(handles.functionEquation,'String','sin(x1)*sin(x2)*exp(-(x1^2+x2^2))');
+end
+
+syms x x1 x2 x3 x4 x5 x6
+guidata(hObject,handles); %update "handles'ow"
+handles.variables = symvar(handles.results); %wykrywa symbole zdefiniowane w funkcji zadanej
+if(find(ismember(handles.variables,x3)))
+    set(handles.edit16_x3,'Enable','on');
+end
+if(find(ismember(handles.variables,x4)))
+    set(handles.edit17_x4,'Enable','on');
+end
+if(find(ismember(handles.variables,x5)))
+    set(handles.edit18_x5,'Enable','on');
+end
+if(find(ismember(handles.variables,x6)))
+    set(handles.edit19_x6,'Enable','on');
 end
 
 guidata(hObject,handles); %update "handles'ow"
@@ -275,11 +310,16 @@ x1From = str2double(get(handles.x1From,'String'));
 x1To = str2double(get(handles.x1To,'String'));
 x2From = str2double(get(handles.x2From,'String'));
 x2To = str2double(get(handles.x2To,'String'));
-syms x y x1 x2 x3
+syms x y x1 x2 x3 x4 x5 x6
 f = get(hObject,'String');
-symvar(f) %wykrywa symbole zdefiniowane w funkcji zadanej
-ezcontour(f,[x1From,x1To,x2From,x2To]); %rysuje funkcje symboliczne
-title([]); %usuwa tytu³ dla ezmesh. jakis lipny strasznie siê pojawia
+handles.variables = symvar(f); %wykrywa symbole zdefiniowane w funkcji zadanej
+
+if(length(handles.variables) == 2)
+    ezcontour(f,[x1From,x1To,x2From,x2To]); %rysuje funkcje symboliczne
+    hold on;
+    %ezmesh(f,[x1From,x1To,x2From,x2To]);
+    title([]); %usuwa tytu³ dla ezmesh. jakis lipny strasznie siê pojawia
+end
 handles.results = sym(f);
 guidata(hObject,handles); %update "handles'ow"
 set(handles.functionEquation,'String',f);
@@ -374,17 +414,32 @@ function pushbutton2_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 y=handles.results;
-syms x x1 x2 x3;
+syms x x1 x2 x3 x4 x5 x6 C;
 G=gradient(y);         %liczy gradient symbolicznie
-H=hessian(y, [x1 x2]); %liczy hessian symbolicznie
-
+H=hessian(y, [x1 x2 x3 x4 x5]); %liczy hessian symbolicznie
+H=C.*H;
+H( all( isAlways(H==0) ,2) ,:) = [];
+H( : ,all( isAlways(H==0) ,1)) = [];
 %obliczanie kierunku z metody newtona - d
 d = -inv(H)*G;
 
+handles.variables
 X_temp = [handles.start_x1; handles.start_x2];
+if(find(ismember(handles.variables,x3)))
+    X_temp = [X_temp; handles.start_x3];
+end
+if(find(ismember(handles.variables,x4)))
+    X_temp = [X_temp; handles.start_x4];
+end
+if(find(ismember(handles.variables,x5)))
+    X_temp = [X_temp; handles.start_x5];
+end
+if(find(ismember(handles.variables,x6)))
+    X_temp = [X_temp; handles.start_x6];
+end
 
 %parametry metody newtona
-epsilon = 10^-10;        %warunek stopu (1)
+epsilon = 10^-15;        %warunek stopu (1)
 licznik_iteracji = 0;   %warunek stopu (2)
 max_iteracji = 100;
 tekst=cell(2*max_iteracji,1);
@@ -409,6 +464,7 @@ while 1
     %bedziemy konkretne punkty do zmiennej d_val
     d_val = evaluated_fx(d, X); %liczy wartosc kieruneku w punktach x1, x2
     sprintf('X: %d',X)
+    X
     sprintf('Wartosc y: %d',evaluated_fx(y, X))
     sprintf('Wartosc d_val*d_val:%d ::: %d',d_val,d_val'*d_val)
     sprintf('\n')
@@ -446,19 +502,24 @@ while 1
     end
     alfa = t;
     %%%%%%%%%% %metoda nimum w kierunku %%%%%%%%%%%%%%
-    X_previous =X
+    X_previous =X;
     X = X+alfa*d_val;
-    plot([X_previous(1),X(1)],[X_previous(2),X(2)],'r','LineWidth',2);
-    plot(X(1),X(2),'*');
+    wartosc_previous = evaluated_fx(y, X_previous);
+    wartosc = evaluated_fx(y, X);
+    if(rank(X)<=2)
+        plot3([X_previous(1),X(1)],[X_previous(2),X(2)], [wartosc_previous, wartosc], 'r','LineWidth',2);
+        plot3(X(1),X(2),wartosc,'*');
+    end
     licznik_iteracji=licznik_iteracji+1;
-    sprintf('%d:   %d ',licznik_iteracji,X)
-    tekst(i) =cellstr(sprintf('%d:   %d ',licznik_iteracji,X));
+    %sprintf('%d:   %d ',licznik_iteracji,X)
+    punkty = sprintf('%d;  ',X);
+    tekst(i) =cellstr(sprintf('%d. punkty: %s  wynik: %d',licznik_iteracji,punkty,wartosc));
     i=i+1;
-    set(handles.iteracje_Edit,'String',tekst)
+    set(handles.iteracje_Edit,'String',tekst);
 end
-X
-set(handles.result_Edit,'String',num2str(X))
-tekst
+X;
+set(handles.result_Edit,'String',num2str(X));
+tekst;
 %%%%%% tutaj powinna byc petla calego algorytmu %%%%%%%%%%
 
 
@@ -590,6 +651,106 @@ function x2To_Callback(hObject, eventdata, handles)
 % --- Executes during object creation, after setting all properties.
 function x2To_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to x2To (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit16_x3_Callback(hObject, eventdata, handles)
+% hObject    handle to edit16_x3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit16_x3 as text
+%        str2double(get(hObject,'String')) returns contents of edit16_x3 as a double
+x3 = str2double(get(hObject,'String'));
+handles.start_x3 = x3; %zachowywanie punktu startowego x2
+guidata(hObject,handles); %update "handles'ow"
+
+% --- Executes during object creation, after setting all properties.
+function edit16_x3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit16_x3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit17_x4_Callback(hObject, eventdata, handles)
+% hObject    handle to edit17_x4 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit17_x4 as text
+%        str2double(get(hObject,'String')) returns contents of edit17_x4 as a double
+x4 = str2double(get(hObject,'String'));
+handles.start_x4 = x4; %zachowywanie punktu startowego x2
+guidata(hObject,handles); %update "handles'ow"
+
+% --- Executes during object creation, after setting all properties.
+function edit17_x4_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit17_x4 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit18_x5_Callback(hObject, eventdata, handles)
+% hObject    handle to edit18_x5 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit18_x5 as text
+%        str2double(get(hObject,'String')) returns contents of edit18_x5 as a double
+x5 = str2double(get(hObject,'String'));
+handles.start_x5 = x5; %zachowywanie punktu startowego x2
+guidata(hObject,handles); %update "handles'ow"
+
+% --- Executes during object creation, after setting all properties.
+function edit18_x5_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit18_x5 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edit19_x6_Callback(hObject, eventdata, handles)
+% hObject    handle to edit19_x6 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edit19_x6 as text
+%        str2double(get(hObject,'String')) returns contents of edit19_x6 as a double
+x6 = str2double(get(hObject,'String'));
+handles.start_x6 = x6; %zachowywanie punktu startowego x2
+guidata(hObject,handles); %update "handles'ow"
+
+% --- Executes during object creation, after setting all properties.
+function edit19_x6_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edit19_x6 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
