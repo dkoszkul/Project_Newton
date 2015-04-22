@@ -22,7 +22,7 @@ function varargout = gui(varargin)
 
 % Edit the above text to modify the response to help gui
 
-% Last Modified by GUIDE v2.5 20-Apr-2015 19:17:36
+% Last Modified by GUIDE v2.5 22-Apr-2015 21:09:12
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -439,16 +439,16 @@ if(find(ismember(handles.variables,x6)))
 end
 
 %parametry metody newtona
-epsilon = 10^-15;        %warunek stopu (1)
+epsilon = str2double(get(handles.newtonEpsilon,'String'));        %warunek stopu (1)
 licznik_iteracji = 0;   %warunek stopu (2)
-max_iteracji = 100;
+max_iteracji = str2double(get(handles.loopsQuantity,'String'));
 tekst=cell(2*max_iteracji,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
 %parametry metody Goldstein'a
-t_l=0; %wspolczynniki kroku
-t_r=9;
-beta = 0.4; %wspolczynnik testu
+t_l=str2double(get(handles.tl,'String')); %wspolczynniki kroku
+t_r=str2double(get(handles.tr,'String'));
+beta = str2double(get(handles.beta,'String')); %wspolczynnik testu
 licznik_iteracji_goldstein = 0;   %warunek stopu (2)
 max_iteracji_goldstein = 10;
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -463,12 +463,7 @@ while 1
     %zachowamy sobie w pamieci d jako rownania symboliczne, a podstawiac
     %bedziemy konkretne punkty do zmiennej d_val
     d_val = evaluated_fx(d, X); %liczy wartosc kieruneku w punktach x1, x2
-    sprintf('X: %d',X)
-    X
-    sprintf('Wartosc y: %d',evaluated_fx(y, X))
-    sprintf('Wartosc d_val*d_val:%d ::: %d',d_val,d_val'*d_val)
-    sprintf('\n')
-    if(d_val'*d_val <= epsilon || licznik_iteracji>max_iteracji) %  gradient jest wystarczajaco blisko zera
+    if(d_val'*d_val <= epsilon || licznik_iteracji>=max_iteracji) %  gradient jest wystarczajaco blisko zera
         %(tzn. zerowy spadek w kazdym kierunku a wiec minimum)
         break
     end
@@ -759,3 +754,136 @@ function edit19_x6_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
+
+
+
+function loopsQuantity_Callback(hObject, eventdata, handles)
+% hObject    handle to loopsQuantity (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of loopsQuantity as text
+%        str2double(get(hObject,'String')) returns contents of loopsQuantity as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function loopsQuantity_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to loopsQuantity (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function newtonEpsilon_Callback(hObject, eventdata, handles)
+% hObject    handle to newtonEpsilon (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of newtonEpsilon as text
+%        str2double(get(hObject,'String')) returns contents of newtonEpsilon as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function newtonEpsilon_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to newtonEpsilon (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function tl_Callback(hObject, eventdata, handles)
+% hObject    handle to tl (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of tl as text
+%        str2double(get(hObject,'String')) returns contents of tl as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function tl_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to tl (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function tr_Callback(hObject, eventdata, handles)
+% hObject    handle to tr (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of tr as text
+%        str2double(get(hObject,'String')) returns contents of tr as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function tr_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to tr (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function beta_Callback(hObject, eventdata, handles)
+% hObject    handle to beta (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of beta as text
+%        str2double(get(hObject,'String')) returns contents of beta as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function beta_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to beta (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+% --- Executes on button press in contour.
+function contour_Callback(hObject, eventdata, handles)
+% hObject    handle to contour (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of contour
+
+
+% --- Executes on button press in plotInDDD.
+function plotInDDD_Callback(hObject, eventdata, handles)
+% hObject    handle to plotInDDD (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hint: get(hObject,'Value') returns toggle state of plotInDDD
