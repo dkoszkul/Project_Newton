@@ -1,4 +1,4 @@
-function [y] = Zangwill(x1From,x1To,x2From,x2To)
+function [y] = Zangwill()
 %Goldstein-price Summary of this function goes here
 %   Detailed explanation goes here
 syms x y x1 x2 x3;

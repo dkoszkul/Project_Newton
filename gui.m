@@ -22,7 +22,7 @@ function varargout = gui(varargin)
 
 % Edit the above text to modify the response to help gui
 
-% Last Modified by GUIDE v2.5 22-Apr-2015 21:09:12
+% Last Modified by GUIDE v2.5 23-Apr-2015 20:10:34
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -74,9 +74,14 @@ set(handles.edit17_x4,'Enable','off');
 set(handles.edit18_x5,'Enable','off');
 set(handles.edit19_x6,'Enable','off');
 
+%wylaczenie rysowania
+set(handles.plotInDDD,'Enable','off');
+set(handles.contour,'Enable','off');
+
 handles.results = '';
 handles.start_x1 = 'x1';
 handles.start_x2 = 'x2';
+handles.result_plot_line = 'nic';
 guidata(hObject, handles);
 
 
@@ -122,43 +127,45 @@ end
 
 % --- Executes on button press in drawButton.
 function drawButton_Callback(hObject, eventdata, handles)
+cla; %clear plota
 hold off; %reset plota
-%---------------pobranie zakresów dla plota------%
-x1From = str2double(get(handles.x1From,'String'));
-x1To = str2double(get(handles.x1To,'String'));
-x2From = str2double(get(handles.x2From,'String'));
-x2To = str2double(get(handles.x2To,'String'));
+
 set(handles.edit16_x3,'Enable','off');
 set(handles.edit17_x4,'Enable','off');
 set(handles.edit18_x5,'Enable','off');
 set(handles.edit19_x6,'Enable','off');
+set(handles.plotInDDD,'Enable','off');
+set(handles.contour,'Enable','off');
+set(handles.plotInDDD,'Value',0);
+set(handles.contour,'Value',0);
+
 switch handles.current_data
     case 'Function with four local minima'
-        [handles.results]=i_1_FourLocalMinima(x1From,x1To,x2From,x2To);
+        [handles.results]=i_1_FourLocalMinima();
         set(handles.functionEquation,'String','x1^4+x2^4-0.62*x1^2-0.62*x2^2')
     case 'Rosenbrock function'
-        [handles.results]=Function_RosenBrock(x1From,x1To,x2From,x2To);
+        [handles.results]=Function_RosenBrock();
         set(handles.functionEquation,'String','100*(x2-x1^2)^2+(1-x1)^2');
     case 'Zangwill function'
-        [handles.results]=Zangwill(x1From,x1To,x2From,x2To);
+        [handles.results]=Zangwill();
         set(handles.functionEquation,'String','(x1-x2+x3)^2+(-x1+x2+x3)^2+(x1+x2-x3)^2');
     case 'Goldsteina-Price function with four local minima'
-        [handles.results]=Goldstein_price(x1From,x1To,x2From,x2To);
+        [handles.results]=Goldstein_price();
         set(handles.functionEquation,'String','(30+(1+(x1 + x2 + 1)^2)*19 - 14*x1 + 3*x1^2 - 14*x2 + 6*x1*x2 + 3*x2^2...');
     case 'Himmelblau modified function'
-        [handles.results]=Himmelblau(x1From,x1To,x2From,x2To);
+        [handles.results]=Himmelblau();
         set(handles.functionEquation,'String','(x1^2 + x2 - 11)^2 + (x1 + x2^2 - 7)^2');
     case 'Ackley function'
-        [handles.results]=Ackley(x1From,x1To,x2From,x2To);
+        [handles.results]=Ackley();
         set(handles.functionEquation,'String','-a*e(-b*sqrt((x1^2 + x2^2)/2)-e((cos(c*x1) + cos(c*x2))/2)+a+e');
     case 'Rastrigin function'
-        [handles.results]=Rastrigin(x1From,x1To,x2From,x2To);
+        [handles.results]=Rastrigin();
         set(handles.functionEquation,'String','x1^2 + x2^2 - 10*cos(2*pi*x1) - 10*cos(2*pi*x2) + 20');
     case 'Geem test function'
-        [handles.results]=Geem(x1From,x1To,x2From,x2To);
+        [handles.results]=Geem();
         set(handles.functionEquation,'String','4*x1^2-2.1*x1^4+(1/3)*x1^6+x1*x2-4*x2^2+4*x2^4');
     case 'Sin-Cos-Exp function'
-        [handles.results]=sin_exp(x1From,x1To,x2From,x2To);
+        [handles.results]=sin_exp();
         set(handles.functionEquation,'String','sin(x1)*sin(x2)*exp(-(x1^2+x2^2))');
 end
 
@@ -176,6 +183,12 @@ if(find(ismember(handles.variables,x5)))
 end
 if(find(ismember(handles.variables,x6)))
     set(handles.edit19_x6,'Enable','on');
+end
+
+% wlaczenie mozliwosci rysownaia kiedy dwie zmienne
+if(length(handles.variables)==2)
+    set(handles.plotInDDD,'Enable','on');
+    set(handles.contour,'Enable','on');
 end
 
 guidata(hObject,handles); %update "handles'ow"
@@ -305,21 +318,11 @@ function OwnFunction_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 hold off; %reset plota
-%---------------pobranie zakresów dla plota------%
-x1From = str2double(get(handles.x1From,'String'));
-x1To = str2double(get(handles.x1To,'String'));
-x2From = str2double(get(handles.x2From,'String'));
-x2To = str2double(get(handles.x2To,'String'));
+
 syms x y x1 x2 x3 x4 x5 x6
 f = get(hObject,'String');
 handles.variables = symvar(f); %wykrywa symbole zdefiniowane w funkcji zadanej
 
-if(length(handles.variables) == 2)
-    ezcontour(f,[x1From,x1To,x2From,x2To]); %rysuje funkcje symboliczne
-    hold on;
-    %ezmesh(f,[x1From,x1To,x2From,x2To]);
-    title([]); %usuwa tytu³ dla ezmesh. jakis lipny strasznie siê pojawia
-end
 handles.results = sym(f);
 guidata(hObject,handles); %update "handles'ow"
 set(handles.functionEquation,'String',f);
@@ -439,9 +442,11 @@ if(find(ismember(handles.variables,x6)))
 end
 
 %parametry metody newtona
-epsilon = str2double(get(handles.newtonEpsilon,'String'));        %warunek stopu (1)
-licznik_iteracji = 0;   %warunek stopu (2)
-max_iteracji = str2double(get(handles.loopsQuantity,'String'));
+epsilon = str2double(get(handles.newtonEpsilon,'String'));       %warunek stopu (1)
+epsilon2 = str2double(get(handles.newtonEpsilon2,'String'));     %warunek stopu (2) - roznica kolejnego punktu od poprzedniego
+epsilon3 = str2double(get(handles.newtonEpsilon3,'String'));     %warunek soptu (3) - roznica wartosci funkcji w kolejnych punktach
+licznik_iteracji = 0;   %warunek stopu (3)
+max_iteracji = str2double(get(handles.loopsQuantity,'String'))
 tekst=cell(2*max_iteracji,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -456,14 +461,14 @@ max_iteracji_goldstein = 10;
 t=4.5;
 %%%%%% tutaj powinna byc petla calego algorytmu %%%%%%%%%%
 X= X_temp;
+X_previous=X*2;
 i=1;
 while 1
     hold on;
-    
     %zachowamy sobie w pamieci d jako rownania symboliczne, a podstawiac
     %bedziemy konkretne punkty do zmiennej d_val
     d_val = evaluated_fx(d, X); %liczy wartosc kieruneku w punktach x1, x2
-    if(d_val'*d_val <= epsilon || licznik_iteracji>=max_iteracji) %  gradient jest wystarczajaco blisko zera
+    if(d_val'*d_val <= epsilon || licznik_iteracji>=max_iteracji || norm(X_previous-X) <= epsilon2 || norm(evaluated_fx(y, X_previous)-evaluated_fx(y, X)) <= epsilon3 ) %  gradient jest wystarczajaco blisko zera
         %(tzn. zerowy spadek w kazdym kierunku a wiec minimum)
         break
     end
@@ -502,9 +507,12 @@ while 1
     wartosc_previous = evaluated_fx(y, X_previous);
     wartosc = evaluated_fx(y, X);
     if(rank(X)<=2)
-        plot3([X_previous(1),X(1)],[X_previous(2),X(2)], [wartosc_previous, wartosc], 'r','LineWidth',2);
-        plot3(X(1),X(2),wartosc,'*');
+        handles.result_plot_line = plot3([X_previous(1),X(1)],[X_previous(2),X(2)], [wartosc_previous, wartosc], 'r','LineWidth',2);
+        handles.result_plot_dot = plot3(X(1),X(2),wartosc,'*');
     end
+
+    guidata(hObject,handles); %update "handles'ow"
+
     licznik_iteracji=licznik_iteracji+1;
     %sprintf('%d:   %d ',licznik_iteracji,X)
     punkty = sprintf('%d;  ',X);
@@ -870,7 +878,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
-
 % --- Executes on button press in contour.
 function contour_Callback(hObject, eventdata, handles)
 % hObject    handle to contour (see GCBO)
@@ -878,6 +885,24 @@ function contour_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of contour
+state = get(hObject,'Value');
+if(state == 0)
+    cla; %clear plota
+else
+    %---------------pobranie zakresów dla plota------%
+    x1From = str2double(get(handles.x1From,'String'));
+    x1To = str2double(get(handles.x1To,'String'));
+    x2From = str2double(get(handles.x2From,'String'));
+    x2To = str2double(get(handles.x2To,'String'));
+    
+    y=handles.results;
+    syms x x1 x2 x3 x4 x5 x6 C;
+    symvar(y);
+    ezcontour(y,[x1From,x1To,x2From,x2To]); %rysuje funkcje symboliczne
+    hold on;
+    grid on;
+    title([]); %usuwa tytu³ dla ezmesh. jakis lipny strasznie siê pojawia
+end
 
 
 % --- Executes on button press in plotInDDD.
@@ -887,3 +912,65 @@ function plotInDDD_Callback(hObject, eventdata, handles)
 % handles    structure with handles and user data (see GUIDATA)
 
 % Hint: get(hObject,'Value') returns toggle state of plotInDDD
+state = get(hObject,'Value');
+if(state == 0)
+    cla; %clear plota
+else
+    %---------------pobranie zakresów dla plota------%
+    x1From = str2double(get(handles.x1From,'String'));
+    x1To = str2double(get(handles.x1To,'String'));
+    x2From = str2double(get(handles.x2From,'String'));
+    x2To = str2double(get(handles.x2To,'String'));
+    
+    y=handles.results;
+    syms x x1 x2 x3 x4 x5 x6 C;
+    symvar(y);
+    ezmesh(y,[x1From,x1To,x2From,x2To]);
+    hold on;
+    title([]); %usuwa tytu³ dla ezmesh. jakis lipny strasznie siê pojawia
+end
+
+
+function newtonEpsilon2_Callback(hObject, eventdata, handles)
+% hObject    handle to newtonEpsilon2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of newtonEpsilon2 as text
+%        str2double(get(hObject,'String')) returns contents of newtonEpsilon2 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function newtonEpsilon2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to newtonEpsilon2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function newtonEpsilon3_Callback(hObject, eventdata, handles)
+% hObject    handle to newtonEpsilon3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of newtonEpsilon3 as text
+%        str2double(get(hObject,'String')) returns contents of newtonEpsilon3 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function newtonEpsilon3_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to newtonEpsilon3 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
