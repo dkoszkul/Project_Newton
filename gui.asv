@@ -48,17 +48,7 @@ end
 function drawButton_Callback(hObject, eventdata, handles)
 cla; %clear plota
 hold off; %reset plota
-
-set(handles.edit16_x3,'Enable','off');
-set(handles.edit17_x4,'Enable','off');
-set(handles.edit18_x5,'Enable','off');
-set(handles.edit19_x6,'Enable','off');
-set(handles.plotInDDD,'Enable','off');
-set(handles.contour,'Enable','off');
-set(handles.plotInDDD,'Value',0);
-set(handles.contour,'Value',0);
-
-[handles]=drawButtonSwitchCase(handles);
+[handles]=drawButton(handles);
 guidata(hObject,handles); %update "handles'ow"
 
 syms x x1 x2 x3 x4 x5 x6
@@ -157,22 +147,17 @@ H( : ,all( isAlways(H==0) ,1)) = [];
 d = -inv(H)*G;
 
 X_temp = [handles.start_x1; handles.start_x2];
-ilosc_zmiennych = 2;
 if(find(ismember(handles.variables,x3)))
     X_temp = [X_temp; handles.start_x3];
-    ilosc_zmiennych=3;
 end
 if(find(ismember(handles.variables,x4)))
     X_temp = [X_temp; handles.start_x4];
-    ilosc_zmiennych=4;
 end
 if(find(ismember(handles.variables,x5)))
     X_temp = [X_temp; handles.start_x5];
-    ilosc_zmiennych=5;
 end
 if(find(ismember(handles.variables,x6)))
     X_temp = [X_temp; handles.start_x6];
-    ilosc_zmiennych=6;
 end
 
 %parametry metody newtona
@@ -211,14 +196,35 @@ while 1
     
     % krok 1 - oblicz pochodna w kierunku
     p=evaluated_fx(G, X)'*d_val;
-    [ t,t_r,t_l ] = GoldsteinTest( t,t_r,t_l,X, beta,p,d_val,y,max_iteracji_goldstein);%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    while 1
+        % krok 2 - obliczanie f(x0) oraz f(x0+ td);
+        t=0.5*(t_l+t_r);
+        f_x_td=evaluated_fx(y, X + t*d_val);
+        f_x = evaluated_fx(y, X);
+        % krok 3 - sprawdzanie warunku mniejszosci/wiekszosci
+        if(f_x_td < (f_x + (1-beta)*p*t))
+            t_l=t;
+        end
+        % krok 4 - t_r => t
+        if(f_x_td > (f_x + beta*p*t))
+            t_r=t;
+        end
+        if((f_x_td >= (f_x + (1-beta)*p*t)) && (f_x_td <= (f_x + beta*p*t)))
+            break
+        end
+        if(licznik_iteracji_goldstein>max_iteracji_goldstein)
+            break
+        end
+        %zwiekszanie licznika iteracji dla petli minimum w kierunku
+        licznik_iteracji_goldstein=licznik_iteracji_goldstein+1;
+    end
     alfa = t;
     %%%%%%%%%% %metoda nimum w kierunku %%%%%%%%%%%%%%
     X_previous =X;
     X = X+alfa*d_val;
     wartosc_previous = evaluated_fx(y, X_previous);
     wartosc = evaluated_fx(y, X);
-    if(ilosc_zmiennych<=2)
+    if(rank(X)<=2)
         handles.result_plot_line = plot3([X_previous(1),X(1)],[X_previous(2),X(2)], [wartosc_previous, wartosc], 'r','LineWidth',2);
         handles.result_plot_dot = plot3(X(1),X(2),wartosc,'*');
     end
