@@ -207,11 +207,9 @@ while 1
     end
     
     %%%%%%%%%% %metoda nimum w kierunku %%%%%%%%%%%%%%
-    licznik_iteracji_goldstein = 0; %zerowanie licznika iteracji dla minimum w kierunku
-    
     % krok 1 - oblicz pochodna w kierunku
-    p=evaluated_fx(G, X)'*d_val;
-    [ t,t_r,t_l ] = GoldsteinTest( t,t_r,t_l,X, beta,p,d_val,y,max_iteracji_goldstein);%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    [ t,t_r,t_l ] = GoldsteinTest( t,t_r,t_l,X,G, beta,d_val,y,max_iteracji_goldstein);%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    
     alfa = t;
     %%%%%%%%%% %metoda nimum w kierunku %%%%%%%%%%%%%%
     X_previous =X;
@@ -235,6 +233,8 @@ end
 set(handles.result_Edit,'String',num2str(X));
 %%%%%% tutaj powinna byc petla calego algorytmu %%%%%%%%%%
 
+
+
 function edit16_x3_Callback(hObject, eventdata, handles)
 x3 = str2double(get(hObject,'String'));
 handles.start_x3 = x3; %zachowywanie punktu startowego x2
@@ -245,8 +245,6 @@ function edit16_x3_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
-
 
 function edit17_x4_Callback(hObject, eventdata, handles)
 x4 = str2double(get(hObject,'String'));
@@ -259,8 +257,6 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
-
-
 function edit18_x5_Callback(hObject, eventdata, handles)
 x5 = str2double(get(hObject,'String'));
 handles.start_x5 = x5; %zachowywanie punktu startowego x2
@@ -271,8 +267,6 @@ function edit18_x5_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
-
-
 
 function edit19_x6_Callback(hObject, eventdata, handles)
 x6 = str2double(get(hObject,'String'));
@@ -285,9 +279,12 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
     set(hObject,'BackgroundColor','white');
 end
 
+
+
 % --- Executes on button press in contour.
 function contour_Callback(hObject, eventdata, handles)
 state = get(hObject,'Value');
+set(handles.plotInDDD,'Value',0);
 if(state == 0)
     cla; %clear plota
 else
@@ -310,6 +307,7 @@ end
 % --- Executes on button press in plotInDDD.
 function plotInDDD_Callback(hObject, eventdata, handles)
 state = get(hObject,'Value');
+set(handles.contour,'Value',0);
 if(state == 0)
     cla; %clear plota
 else
