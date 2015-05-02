@@ -12,10 +12,10 @@ handles.output = hObject;
 set(handles.pushbutton2,'Enable','off'); % wylaczenie przycisku "compute"
 
 %wylaczenie x3 x4 x5 x6
-set(handles.edit16_x3,'Enable','off');
-set(handles.edit17_x4,'Enable','off');
-set(handles.edit18_x5,'Enable','off');
-set(handles.edit19_x6,'Enable','off');
+set(handles.x3_edit,'Enable','off');
+set(handles.x4_edit,'Enable','off');
+set(handles.x5_edit,'Enable','off');
+set(handles.x6_edit,'Enable','off');
 
 %wylaczenie rysowania
 set(handles.plotInDDD,'Enable','off');

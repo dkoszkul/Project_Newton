@@ -49,10 +49,10 @@ function drawButton_Callback(hObject, eventdata, handles)
 cla; %clear plota
 hold off; %reset plota
 
-set(handles.edit16_x3,'Enable','off');
-set(handles.edit17_x4,'Enable','off');
-set(handles.edit18_x5,'Enable','off');
-set(handles.edit19_x6,'Enable','off');
+set(handles.x3_edit,'Enable','off');
+set(handles.x4_edit,'Enable','off');
+set(handles.x5_edit,'Enable','off');
+set(handles.x6_edit,'Enable','off');
 set(handles.plotInDDD,'Enable','off');
 set(handles.contour,'Enable','off');
 set(handles.plotInDDD,'Value',0);
@@ -64,16 +64,16 @@ guidata(hObject,handles); %update "handles'ow"
 syms x x1 x2 x3 x4 x5 x6
 handles.variables = symvar(handles.results); %wykrywa symbole zdefiniowane w funkcji zadanej
 if(find(ismember(handles.variables,x3)))
-    set(handles.edit16_x3,'Enable','on');
+    set(handles.x3_edit,'Enable','on');
 end
 if(find(ismember(handles.variables,x4)))
-    set(handles.edit17_x4,'Enable','on');
+    set(handles.x4_edit,'Enable','on');
 end
 if(find(ismember(handles.variables,x5)))
-    set(handles.edit18_x5,'Enable','on');
+    set(handles.x5_edit,'Enable','on');
 end
 if(find(ismember(handles.variables,x6)))
-    set(handles.edit19_x6,'Enable','on');
+    set(handles.x6_edit,'Enable','on');
 end
 
 % wlaczenie mozliwosci rysownaia kiedy dwie zmienne
@@ -83,7 +83,7 @@ if(length(handles.variables)==2)
 end
 
 guidata(hObject,handles); %update "handles'ow"
-if (isempty(handles.results) | handles.start_x1 == 'x1' | handles.start_x2 == 'x2')  %sprawdzanie czy mamy jakies dane zapisane, zeby je przeliczyc
+if (isempty(handles.results) | strcmp(handles.start_x1,'x1') | strcmp(handles.start_x2,'x2'))  %sprawdzanie czy mamy jakies dane zapisane, zeby je przeliczyc
     set(handles.pushbutton2,'Enable','off') %brak danych - przycisk calculate wylaczony
 else
     set(handles.pushbutton2,'Enable','on') %dane zeskladowane - mozna liczyc :)
@@ -112,7 +112,7 @@ end
 
 
 
-function edit8_Callback(hObject, eventdata, handles)
+function x2_edit_Callback(hObject, eventdata, handles)
 x2 = str2double(get(hObject,'String'));
 handles.start_x2 = x2; %zachowywanie punktu startowego x2
 guidata(hObject,handles); %update "handles'ow"
@@ -123,14 +123,14 @@ else
 end
 
 % --- Executes during object creation, after setting all properties.
-function edit8_CreateFcn(hObject, eventdata, handles)
+function x2_edit_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
 
 
 
-function edit9_Callback(hObject, eventdata, handles)
+function x1_edit_Callback(hObject, eventdata, handles)
 x1 = str2double(get(hObject,'String'));
 handles.start_x1 = x1; %zachowywanie punktu startowego x1
 guidata(hObject,handles); %update "handles'ow"
@@ -140,7 +140,7 @@ else
     set(handles.pushbutton2,'Enable','on') %dane zeskladowane - mozna liczyc :)
 end
 
-function edit9_CreateFcn(hObject, eventdata, handles)
+function x1_edit_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
@@ -183,7 +183,6 @@ licznik_iteracji = 0;   %warunek stopu (3)
 max_iteracji = str2double(get(handles.loopsQuantity,'String'));
 tekst=cell(2*max_iteracji,1);
 %%%%%%%%%%%%%%%%%%%%%%%%%
-
 %parametry metody Goldstein'a
 t_l=str2double(get(handles.tl,'String')); %wspolczynniki kroku
 t_r=str2double(get(handles.tr,'String'));
@@ -205,7 +204,6 @@ while 1
         %(tzn. zerowy spadek w kazdym kierunku a wiec minimum)
         break
     end
-    
     %%%%%%%%%% %metoda nimum w kierunku %%%%%%%%%%%%%%
     % krok 1 - oblicz pochodna w kierunku
     [ t,t_r,t_l ] = GoldsteinTest( t,t_r,t_l,X,G, beta,d_val,y,max_iteracji_goldstein);%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -221,60 +219,61 @@ while 1
         handles.result_plot_dot = plot3(X(1),X(2),wartosc,'*');
     end
 
-    guidata(hObject,handles); %update "handles'ow"
+   % guidata(hObject,handles); %update "handles'ow"
 
     licznik_iteracji=licznik_iteracji+1;
     %sprintf('%d:   %d ',licznik_iteracji,X)
     punkty = sprintf('%d;  ',X);
     tekst(i) =cellstr(sprintf('%d. punkty: %s  wynik: %d',licznik_iteracji,punkty,wartosc));
     i=i+1;
-    set(handles.iteracje_Edit,'String',tekst);
+    
 end
+set(handles.iteracje_Edit,'String',tekst);
 set(handles.result_Edit,'String',num2str(X));
 %%%%%% tutaj powinna byc petla calego algorytmu %%%%%%%%%%
 
 
 
-function edit16_x3_Callback(hObject, eventdata, handles)
+function x3_edit_Callback(hObject, eventdata, handles)
 x3 = str2double(get(hObject,'String'));
 handles.start_x3 = x3; %zachowywanie punktu startowego x2
 guidata(hObject,handles); %update "handles'ow"
 
 % --- Executes during object creation, after setting all properties.
-function edit16_x3_CreateFcn(hObject, eventdata, handles)
+function x3_edit_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
 
-function edit17_x4_Callback(hObject, eventdata, handles)
+function x4_edit_Callback(hObject, eventdata, handles)
 x4 = str2double(get(hObject,'String'));
 handles.start_x4 = x4; %zachowywanie punktu startowego x2
 guidata(hObject,handles); %update "handles'ow"
 
 % --- Executes during object creation, after setting all properties.
-function edit17_x4_CreateFcn(hObject, eventdata, handles)
+function x4_edit_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
 
-function edit18_x5_Callback(hObject, eventdata, handles)
+function x5_edit_Callback(hObject, eventdata, handles)
 x5 = str2double(get(hObject,'String'));
 handles.start_x5 = x5; %zachowywanie punktu startowego x2
 guidata(hObject,handles); %update "handles'ow"
 
 % --- Executes during object creation, after setting all properties.
-function edit18_x5_CreateFcn(hObject, eventdata, handles)
+function x5_edit_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
 
-function edit19_x6_Callback(hObject, eventdata, handles)
+function x6_edit_Callback(hObject, eventdata, handles)
 x6 = str2double(get(hObject,'String'));
 handles.start_x6 = x6; %zachowywanie punktu startowego x2
 guidata(hObject,handles); %update "handles'ow"
 
 % --- Executes during object creation, after setting all properties.
-function edit19_x6_CreateFcn(hObject, eventdata, handles)
+function x6_edit_CreateFcn(hObject, eventdata, handles)
 if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
     set(hObject,'BackgroundColor','white');
 end
