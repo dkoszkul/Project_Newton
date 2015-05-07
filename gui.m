@@ -224,12 +224,17 @@ while 1
     licznik_iteracji=licznik_iteracji+1;
     %sprintf('%d:   %d ',licznik_iteracji,X)
     punkty = sprintf('%d;  ',X);
-    tekst(i) =cellstr(sprintf('%d. punkty: %s  wynik: %d',licznik_iteracji,punkty,wartosc));
+    tekst(i) =cellstr(sprintf('%d. %s f(x)=%d',licznik_iteracji,punkty,wartosc));
     i=i+1;
     
 end
 set(handles.iteracje_Edit,'String',tekst);
-set(handles.result_Edit,'String',num2str(X));
+wartosc_koncowa = evaluated_fx(y, X);
+punkty = sprintf('%d;  ',X);
+wartosc_koncowa
+pole_wyniku = cellstr(sprintf('x=[  %s]; \n\n f(x)=%d', punkty, wartosc_koncowa));
+
+set(handles.result_Edit,'String',pole_wyniku);
 %%%%%% tutaj powinna byc petla calego algorytmu %%%%%%%%%%
 
 
