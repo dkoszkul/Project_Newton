@@ -1,0 +1,12 @@
+-zmieniæ format wypisywanych iteracji (usunac 'punkty', 'wynik'),
+-zmieniæ format wypisywanych wynikow (dodaæ wartoœæ znalezionego minimum),
+
+-w raporcie:
+	- opisac 3 wybrane funkcje np.:
+		- Gem Function),
+		- x1^2+x1*x2-x2^2-x1-x2,
+		- (x1-2)^2+(x1-x2^2)^2,
+	- znaleŸæ dla nich wszystkie minima,
+	- zrobiæ tabelki z otrzymanymi wynikami, krokami itd,
+	- podaæ parametry dla testu Goldsteina,
+	- napotkane trudnoœci,
