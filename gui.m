@@ -224,7 +224,7 @@ while 1
     licznik_iteracji=licznik_iteracji+1;
     %sprintf('%d:   %d ',licznik_iteracji,X)
     punkty = sprintf('%d;  ',X);
-    tekst(i) =cellstr(sprintf('%d. %s f(x)=%d',licznik_iteracji,punkty,wartosc));
+    tekst(i) =cellstr(sprintf('%d. %s f(x)=%d, K:%d',licznik_iteracji,punkty,wartosc, d_val'*d_val));
     i=i+1;
     
 end
@@ -239,7 +239,7 @@ else
     wartosc_koncowa = evaluated_fx(y, X);
     punkty = sprintf('%d;  ',X);
     set(handles.pointType,'String',checkSubmatrices(evaluated_fx(H,X)));
-    pole_wyniku = cellstr(sprintf('x=[  %s]; \n\n f(x)=%d', punkty, wartosc_koncowa));
+    pole_wyniku = cellstr(sprintf('x=[  %s]; \n f(x)=%d \n K:%d', punkty, wartosc_koncowa, d_val'*d_val));
     set(handles.result_Edit,'String',pole_wyniku);
 end
 
