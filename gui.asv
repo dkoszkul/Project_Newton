@@ -230,10 +230,10 @@ while 1
 end
 ekstremum_type=checkSubmatrices(evaluated_fx(H,X));
 text_to_check = 'local minimum or maximum not achieved';
-if(strcmp(ekstremum_type,text_to_check))
-    set(handles.iteracje_Edit,'String',text_to_check);
-    set(handles.pointType,'String',text_to_check);
-    set(handles.result_Edit,'String',text_to_check);
+if(STRCMP(ekstremum_type,text_to_check))
+    set(handles.iteracje_Edit,'String','local minimum or maximum not achieved');
+    set(handles.pointType,'String','local minimum or maximum not achieved');
+    set(handles.result_Edit,'String','local minimum or maximum not achieved');
 else
     set(handles.iteracje_Edit,'String',tekst);
     wartosc_koncowa = evaluated_fx(y, X);
