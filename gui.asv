@@ -203,8 +203,8 @@ else
     X_previous=X*2;
     i=1;
     
-    if(strcmp(checkSubmatrices(evaluated_fx(H,X)),'local maximum'))
-        text_to_check = sprintf('%s. %s',checkSubmatrices(evaluated_fx(H,X)),'Computation stopped');
+    if(strcmp(checkSubmatrices(evaluated_fx(H,X)),'local minimum or maximum does not exist') || strcmp(checkSubmatrices(evaluated_fx(H,X)),'local maximum'))
+        text_to_check = sprintf('%s. checkSubmatrices(evaluated_fx(H,X));
         set(handles.iteracje_Edit,'String',text_to_check);
         set(handles.pointType,'String',text_to_check);
         set(handles.result_Edit,'String',text_to_check);

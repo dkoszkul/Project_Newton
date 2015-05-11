@@ -20,10 +20,10 @@ else
     for i=x:-1:1
         numberOfSubmatrix = (x - i)+1;
         if(mod(numberOfSubmatrix,2) == 0 && wyznaczniki_podmacierzy(i) < 0) %if i is even
-            result='local minimum or maximum not achieved';
+            result='local minimum or maximum does not exist';
             break;
         else if(mod(numberOfSubmatrix,2) == 1 && wyznaczniki_podmacierzy(i) > 0)
-                result='local minimum or maximum not achieved';
+                result='local minimum or maximum does not exist';
                 break;
             end
         end
