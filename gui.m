@@ -212,7 +212,7 @@ else
         punkty = sprintf('%d;  ',X);
         wartosc = evaluated_fx(y, X);
         d_val = evaluated_fx(d, X);
-        tekst(1) =cellstr(sprintf('0. %s f(x)=%d, K:%d',punkty,wartosc, d_val'*d_val));
+        tekst(1) =cellstr(sprintf('0. %s f(x)=%d, K1:%d, K2:%d, K3:%d',punkty,wartosc, d_val'*d_val, norm(X_previous-X),norm(evaluated_fx(y, X_previous)-evaluated_fx(y, X))));
         while 1
             hold on;
             %zachowamy sobie w pamieci d jako rownania symboliczne, a podstawiac
@@ -242,7 +242,7 @@ else
             licznik_iteracji=licznik_iteracji+1;
             %sprintf('%d:   %d ',licznik_iteracji,X)
             punkty = sprintf('%d;  ',X);
-            tekst(i+1) =cellstr(sprintf('%d. %s f(x)=%d, K:%d',licznik_iteracji,punkty,wartosc, d_val'*d_val));
+            tekst(i+1) =cellstr(sprintf('%d. %s f(x)=%d, K1:%d, K2:%d, K3:%d',licznik_iteracji,punkty,wartosc, d_val'*d_val, norm(X_previous-X),norm(evaluated_fx(y, X_previous)-evaluated_fx(y, X))));
             i=i+1;
         end
         

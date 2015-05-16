@@ -1,11 +1,22 @@
 \documentclass[12pt]{article}
 
-\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
+%\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx} % Required for the inclusion of images
 \usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements 
 \usepackage{float}
+
+\usepackage{enumitem}
+%pakiety wspomagaj?ce i poprawiaj?ce sk?adanie tabel
+\usepackage{supertabular}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{hhline}
+\usepackage{graphicx} 
+\usepackage{wrapfig}
+
+
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 
 \renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
@@ -28,4 +39,93 @@ Newton's method in optimization is a numeric method and is used to find local ex
 \subsubsection{The Newton's method iteration}
 Let $x_0$ be a point 
 
+
+\section{Examples}
+\subsection{Function with four local minima}
+Function equation:
+\begin{equation}
+y=x_1^4+x_2^4-0.62x_1^2-0.62x_2^2
+\end{equation}
+
+Function figures:
+	\begin{figure}[H]
+		\includegraphics[width=12cm]{four_3d.jpg}
+		\caption{Analyzed function 3D view.}
+	\end{figure}
+	\begin{figure}[H]
+			\includegraphics[width=12cm]{four_cont.jpg}
+		\caption{Analyzed function contour view.}
+	\end{figure}	
+
+	\begin{table}[H]
+		Results: \\ \\
+		\begin{tabularx}{\textwidth}{c|X|c|c|c|c|}
+			iteration & point coordinates & function value & $C_1$ value & $C_2$ value & $C_3$ value\\
+			\hline
+			0 & $1, 1$ & $0.76$ & $0.132$ & - & - \\
+			\hline					
+			1 & $0.743, 0.743$ & $-0.0743$ & $0.132$ & $0.363$ & $0.834$ \\ 
+			\hline 
+			2 & $0.61, 0.61$ & $-0.185$ & $0.0358$ & $0.189$ & $0.11$ \\ 
+			\hline
+			3 & $5.63\cdot10^{-1}, 5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ & $4.36\cdot10^{-3}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ 
+			\hline
+			4 & $5.63\cdot10^{-1}, 5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ &
+			$7.35\cdot10^{-5}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ \hline
+		\end{tabularx}	
+	\end{table}		
+	\begin{table}[H]
+		\begin{tabularx}{\textwidth}{c|X|c|c|c|c|}
+			iteration & point coordinates & function value & $C_1$ value & $C_2$ value & $C_3$ value\\
+			\hline	
+			0 & $-1, 1$ & $0.76$ & $0.132$ & - & - \\
+			\hline					
+			1 & $-0.743, 0.743$ & $-0.0743$ & $0.132$ & $0.363$ & $0.834$ \\ 
+			\hline 
+			2 & $-0.61, 0.61$ & $-0.185$ & $0.0358$ & $0.189$ & $0.11$ \\ 
+			\hline
+			3 & $-5.63\cdot10^{-1}, 5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ & $4.36\cdot10^{-3}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ 
+			\hline
+			4 & $-5.63\cdot10^{-1}, 5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ &
+			$7.35\cdot10^{-5}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ \hline
+		\end{tabularx}		 
+	\end{table}
+	\begin{table}[H]
+		\begin{tabularx}{\textwidth}{c|X|c|c|c|c|}
+			iteration & point coordinates & function value & $C_1$ value & $C_2$ value & $C_3$ value\\
+			\hline	
+			0 & $-1, -1$ & $0.76$ & $0.132$ & - & - \\
+			\hline					
+			1 & $-0.743, -0.743$ & $-0.0743$ & $0.132$ & $0.363$ & $0.834$ \\ 
+			\hline 
+			2 & $-0.61, -0.61$ & $-0.185$ & $0.0358$ & $0.189$ & $0.11$ \\ 
+			\hline
+			3 & $-5.63\cdot10^{-1}, -5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ & $4.36\cdot10^{-3}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ 
+			\hline
+			4 & $-5.63\cdot10^{-1}, -5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ &
+			$7.35\cdot10^{-5}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ \hline
+		\end{tabularx}		 
+	\end{table}
+	\begin{table}[H]
+		\begin{tabularx}{\textwidth}{c|X|c|c|c|c|}
+			iteration & point coordinates & function value & $C_1$ value & $C_2$ value & $C_3$ value\\
+			\hline	
+			0 & $1, -1$ & $0.76$ & $0.132$ & - & - \\
+			\hline					
+			1 & $0.743, -0.743$ & $-0.0743$ & $0.132$ & $0.363$ & $0.834$ \\ 
+			\hline 
+			2 & $0.61, -0.61$ & $-0.185$ & $0.0358$ & $0.189$ & $0.11$ \\ 
+			\hline
+			3 & $5.63\cdot10^{-1}, -5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ & $4.36\cdot10^{-3}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ 
+			\hline
+			4 & $5.63\cdot10^{-1}, -5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ &
+			$7.35\cdot10^{-5}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ \hline
+		\end{tabularx}		 
+	\end{table}
+	
+	\begin{figure}[H]
+		\includegraphics[width=16cm]{four_results.png}
+		\caption{Location of four minima.}
+	\end{figure}
+	
 \end{document}
