@@ -34,8 +34,10 @@
 \maketitle % Insert the title, author and date
 
 \section{Introduce}
+\subsection{Formulating optimization problem}
+Problem, which needs to be solved, is to find minimum point in set non-linear, multidimensional function. If function has more than one minimum, algorithm is looking for the nearest local minimum from initial point. In this project method to find these special points is Newton's method. This algorithm allows to find what is needed, but this particular method can be optimized by using other algorithm to find optimal step, which is used in the main optimization program. Thanks to this whole algorithm can find the solution in a faster way.
 \subsection{Newton's method}
-Newton's method in optimization is a numeric method and is used to find local extrema/roots in a defined, differentiable function \textit{f}. In this method we need to construct a sequence $x_n$ from initial point $x_0$ to $x_*$ such that $f'(x_*)=0$. Last point is a local extremum point which we  are looking for.
+Newton's method in optimization is a numeric method, which is used to find local extrema in a defined, differentiable function \textit{f}. In this method we need to construct a sequence $x_n$ from initial point $x_0$ to $x_*$ such that $f'(x_*)=0$. Last point is a local extremum point which we  are looking for.
 \subsubsection{The Newton's method iteration}
 Let $x_0$ be a point 
 
