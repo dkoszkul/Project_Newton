@@ -6,7 +6,7 @@
 \usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements 
 \usepackage{float}
-
+\usepackage{amssymb}
 \usepackage{enumitem}
 %pakiety wspomagaj?ce i poprawiaj?ce sk?adanie tabel
 \usepackage{supertabular}
@@ -35,8 +35,19 @@
 
 \section{Introduce}
 \subsection{Formulating optimization problem}
-Problem, which needs to be solved, is to find minimum point in set non-linear, multidimensional function. If function has more than one minimum, algorithm is looking for the nearest local minimum from initial point. In this project method to find these special points is Newton's method. This algorithm allows to find what is needed, but this particular method can be optimized by using other algorithm to find optimal step, which is used in the main optimization program. Thanks to this whole algorithm can find the solution in a faster way.
+Problem, which needs to be solved, is to find minimum point in set non-linear, multidimensional function. If function has more than one minimum, algorithm is looking for the nearest local minimum from initial point. In this project method to find these special points is Newton's method. This algorithm allows to find local minimum points, but this particular method can be optimized by using other algorithm to find optimal step, which is used in the main optimization program. Thanks to this, whole algorithm can find the solution in a faster way.
 \subsection{Newton's method}
+Newton's method is a local optimization type algorithm. To implement the method, stop criteria should be also known. In this case we have three main stop criteria for Newton's method and one additional that ensures that program stops counting after exceeding maximum compute time.
+\begin{enumerate}
+\item $ <grad f(x) \cdot grad f(x)> \leqslant \epsilon_1 $
+\item $ ||x_i-x_{i-1}|| \leqslant \epsilon_2 $
+\item $ |f(x_i)-f(x_{i-1})| \leqslant \epsilon_3 $
+\item max number of iterations
+\end{enumerate}  
+If one from these four criteria 
+
+\vspace{3cm}
+
 Newton's method in optimization is a numeric method, which is used to find local extrema in a defined, differentiable function \textit{f}. In this method we need to construct a sequence $x_n$ from initial point $x_0$ to $x_*$ such that $f'(x_*)=0$. Last point is a local extremum point which we  are looking for.
 \subsubsection{The Newton's method iteration}
 Let $x_0$ be a point 
