@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.2)  21 MAY 2015 16:26
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.2)  23 MAY 2015 14:00
 entering extended mode
 **Report.tex
 ("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.tex"
@@ -643,56 +643,64 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 \c__siunitx_mathtt_int=\count162
- [1
 
-
-{C:/Users/Dominik Koszkul/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<four_3d.jpg, id=16, 539.01375pt x 467.49657pt>
-File: four_3d.jpg Graphic file (type jpg)
- <use four_3d.jpg>
-Package pdftex.def Info: four_3d.jpg used on input line 64.
-(pdftex.def)             Requested size: 341.43306pt x 296.13654pt.
-
-<four_cont.jpg, id=17, 545.78906pt x 468.24937pt>
-File: four_cont.jpg Graphic file (type jpg)
- <use four_cont.jpg>
-Package pdftex.def Info: four_cont.jpg used on input line 68.
-(pdftex.def)             Requested size: 341.43306pt x 292.92664pt.
- [2 <D:/Dysk Google/STUDIA/GIT/Project_Newton/report/four_3d.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 73--88
+Underfull \hbox (badness 10000) in paragraph at lines 59--60
 
  []
 
-[3 <D:/Dysk Google/STUDIA/GIT/Project_Newton/report/four_cont.jpg>]
-<four_results.png, id=24, 317.68687pt x 310.15875pt>
+[1
+
+
+{C:/Users/Dominik Koszkul/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] <
+four_3d.jpg, id=18, 539.01375pt x 467.49657pt>
+File: four_3d.jpg Graphic file (type jpg)
+ <use four_3d.jpg>
+Package pdftex.def Info: four_3d.jpg used on input line 85.
+(pdftex.def)             Requested size: 341.43306pt x 296.13654pt.
+
+<four_cont.jpg, id=19, 545.78906pt x 468.24937pt>
+File: four_cont.jpg Graphic file (type jpg)
+ <use four_cont.jpg>
+Package pdftex.def Info: four_cont.jpg used on input line 89.
+(pdftex.def)             Requested size: 341.43306pt x 292.92664pt.
+ [2]
+Underfull \hbox (badness 10000) in paragraph at lines 94--109
+
+ []
+
+[3 <D:/Dysk Google/STUDIA/GIT/Project_Newton/report/four_3d.jpg> <D:/Dysk Googl
+e/STUDIA/GIT/Project_Newton/report/four_cont.jpg>]
+<four_results.png, id=26, 317.68687pt x 310.15875pt>
 File: four_results.png Graphic file (type png)
  <use four_results.png>
-Package pdftex.def Info: four_results.png used on input line 139.
+Package pdftex.def Info: four_results.png used on input line 160.
 (pdftex.def)             Requested size: 455.24408pt x 444.49384pt.
 
-[4 <D:/Dysk Google/STUDIA/GIT/Project_Newton/report/four_results.png>]
+[4] [5 <D:/Dysk Google/STUDIA/GIT/Project_Newton/report/four_results.png>]
 ("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.aux") ) 
 Here is how much of TeX's memory you used:
- 12071 strings out of 493921
- 244790 string characters out of 3150862
+ 12073 strings out of 493921
+ 244846 string characters out of 3150862
  268783 words of memory out of 3000000
- 15271 multiletter control sequences out of 15000+200000
+ 15273 multiletter control sequences out of 15000+200000
  15880 words of font info for 62 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  39i,12n,39p,10433b,484s stack positions out of 5000i,500n,10000p,200000b,50000s
 <E:/Programs/Mi
 KTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Programs/MiKTeX/fonts/type1/
 public/amsfonts/cm/cmcsc10.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb><E:/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr8.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><E:/Programs/MiKTeX/fonts/type1/
-public/amsfonts/symbols/msam10.pfb>
-Output written on Report.pdf (4 pages, 430022 bytes).
+cm/cmmi12.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><E:/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><E:/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr17.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pf
+b><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/sy
+mbols/msam10.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
+Output written on Report.pdf (5 pages, 448646 bytes).
 PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
+ 73 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -34,17 +34,37 @@
 \maketitle % Insert the title, author and date
 
 \section{Introduce}
+
 \subsection{Formulating optimization problem}
-Problem, which needs to be solved, is to find minimum point in set non-linear, multidimensional function. If function has more than one minimum, algorithm is looking for the nearest local minimum from initial point. In this project method to find these special points is Newton's method. This algorithm allows to find local minimum points, but this particular method can be optimized by using other algorithm to find optimal step, which is used in the main optimization program. Thanks to this, whole algorithm can find the solution in a faster way.
+Problem, which needs to be solved, is to find minimum point in set of non-linear, multidimensional function. If function has more than one minimum, algorithm is looking for the nearest local minimum from the initial point. In this project, method to find these special points is \textit{Newton's method}. This algorithm allows to find local minimum points, but this particular method can be optimized by using other algorithm to find optimal step, which is used in the main optimization program. Thanks to this, whole algorithm can find the solution in a faster way. The objective function is presented in the following way
+\begin{equation}
+\min\limits_{x \epsilon \mathbb{R}^n} f(x) ,
+\end{equation}
+where $n \leqslant 5$. Newton's method is a gradient method without constraints. This means that minimum point is searched in $\mathbb{R}^n$.
+
+
 \subsection{Newton's method}
-Newton's method is a local optimization type algorithm. To implement the method, stop criteria should be also known. In this case we have three main stop criteria for Newton's method and one additional that ensures that program stops counting after exceeding maximum compute time.
-\begin{enumerate}
-\item $ <grad f(x) \cdot grad f(x)> \leqslant \epsilon_1 $
-\item $ ||x_i-x_{i-1}|| \leqslant \epsilon_2 $
-\item $ |f(x_i)-f(x_{i-1})| \leqslant \epsilon_3 $
-\item max number of iterations
+Newton's method is a local optimization type algorithm. To implement the method, stop criteria should be also known. In this case we have three main stop criteria for Newton's method and one additional that ensures that program stops computing after exceeding maximum iterations number.
+
+\subsubsection{Stop criteria}
+\begin{enumerate}[label=\arabic*.]
+\item $ <grad f(x^i) \cdot grad f(x^i)> \leqslant \varepsilon_1 $ \\
+Scalar product of the squared gradient of the function in point $x^i$ should be less or equal to $\varepsilon_1 $,
+\item $ ||x^i-x^{i-1}|| \leqslant \varepsilon_2 $ \\
+Euclidean norm of the distance between $x^i$ and $x^{i-1}$ points should be less or equal to $\varepsilon_2 $,
+\item $ |f(x^i)-f(x^{i-1})| \leqslant \varepsilon_3 $ \\
+Difference between values of the function in $x^i$ and $x^{i-1}$ should be less or equal to $\varepsilon_3 $,
+\item maximum number of iterations.
 \end{enumerate}  
-If one from these four criteria 
+If one from these four criteria is satisfied program stops computing and presents results. \\
+
+\subsubsection{Convergence}
+Newton's method has a quadratic convergence - convergence rank equals two. This means that, if assumptions are fulfilled, the error decreases in a quadratic way along with the iteration number. In fact the convergence not always is. When the starting point is too far from minimum point the method may be divergent.
+
+\subsubsection{Method constraints}
+\textbf{Minimum in selected direction method} \\
+Pure Newton's method after computing the direction has set step length which is equal to $1.0$. When the starting point is far from the local minimum the method will have huge amount of iterations and this is main reason of long computing time. In our implementation we used method, which can find the best step length in current iteration. This algorithm is \textit{bisection method with Goldstein test}.
+
 
 \vspace{3cm}
 
