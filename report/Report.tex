@@ -65,7 +65,7 @@ If one from these four criteria is satisfied program stops computing and present
 \subsubsection{Convergence}
 Newton's method has a quadratic convergence - convergence rank equals two. This means that, if assumptions are fulfilled, the error decreases in a quadratic way along with the iteration number. In fact the convergence not always is. When the starting point is too far from minimum point the method may be divergent.
 
-\subsubsection{Method constraints}
+\subsubsection{Method constraints} \label{MC}
 \textbf{Minimum in selected direction method} \\
 Pure Newton's method after computing the direction has set step length which is equal to $1.0$. When the starting point is far from the local minimum the method will have huge amount of iterations and this is main reason of long computing time. In our implementation we used method, which can find the best step length in current iteration. This algorithm is \textit{bisection method with Goldstein test}. We chose this algorithm because in our program we have to compute the gradient and this method also uses the gradient to compute step length. Moreover this is one of the best method for Newton's algorithm. We can also set precision and thank to this manipulate speed of whole program.
 \begin{figure}[H]
@@ -95,9 +95,25 @@ The program was written in \textit{Matlab} environment. We use this program beca
 \label{program}
 \end{center}		
 \end{figure}
+To start computing the user should go through a few steps:
+\begin{enumerate}
+\item choose one of predefined functions or type own (number 1 in figure \ref{program}),
+\item click 'load data' button (number 7 in figure \ref{program}),
+\item set starting points (number 2 in figure \ref{program}),
+\item set accuracy for each stop criteria or leave default (number 3 in figure \ref{program}),
+\item set ranges if $n < 3$ (number 4 in figure \ref{program}),
+\item set parameters for method, which counts optimal step length in every iteration (number 5 in figure \ref{program}),
+\item set plot type if $n < 3$ (number 6 in figure \ref{program}),
+\item start calculations by push 'Calculate' button (number 7 in figure \ref{program}).
+\end{enumerate}
+\textbf{Select $\varepsilon$ (number 3 in figure \ref{program})} \\
+The smaller $\varepsilon$ the better results but longer calculations. This constraint should be bigger than Matlab computing accuracy. Default is set $10^{-5}$ which is sufficient value and gives good results. \\
 
+\textbf{Select ranges (number 4 in figure \ref{program})} \\
+If user types or choose function which has $n < 3$ he can plot this functions and see steps generated during finding minimum. Ranges depends on chosen function. $x_1,x_2 \in [-6,6]$ are default values. \\
 
-\vspace{3cm}
+\textbf{Select Goldstein's method parameters (number 5 in figure \ref{program})}\\
+Default values are $\tau_l=0$, $\tau_r=8$ and $\beta=0.4$ and provided correct calculations for most of chosen points. Rules to choose ranges are described in subsection \ref{MC}. The bigger $\beta$ the better results and longer calculations. With bigger $\beta$ algorithm may not find optimal point because method to find optimal step length will give very small steps and algorithm will not manage to reach minimum point.
 
 \section{Examples}
 \subsection{Function with four local minima}
