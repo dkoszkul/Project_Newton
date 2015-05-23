@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.2)  23 MAY 2015 17:28
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.2)  23 MAY 2015 17:42
 entering extended mode
 **Report.tex
 ("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.tex"
@@ -548,11 +548,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.aux"
-
-LaTeX Warning: Label `goldstein' multiply defined.
-
-)
+("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.aux")
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 27.
@@ -675,30 +671,27 @@ Package pdftex.def Info: four_results.png used on input line 186.
 (pdftex.def)             Requested size: 455.24408pt x 444.49384pt.
 
 [6 <D:/Dysk Google/STUDIA/GIT/Project_Newton/report/four_results.png>]
-("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.aux")
-
-LaTeX Warning: There were multiply-defined labels.
-
- ) 
+("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.aux") ) 
 Here is how much of TeX's memory you used:
- 11474 strings out of 493921
- 236485 string characters out of 3150862
- 257078 words of memory out of 3000000
- 14679 multiletter control sequences out of 15000+200000
+ 11475 strings out of 493921
+ 236494 string characters out of 3150862
+ 257047 words of memory out of 3000000
+ 14680 multiletter control sequences out of 15000+200000
  15880 words of font info for 62 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
  39i,12n,39p,10433b,525s stack positions out of 5000i,500n,10000p,200000b,50000s
-<E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><E:/Programs/MiKTeX/fonts/type1
-/public/amsfonts/cm/cmmi12.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmmi6.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/P
-rograms/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/Programs/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmr17.pfb><E:/Programs/MiKTeX/fonts/type1/public/am
-sfonts/cm/cmr8.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pf
-b><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/Programs/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><E:/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/symbols/msam10.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/symbols/msbm10.pfb>
+<E:/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Programs/MiKTeX/fonts/type1/
+public/amsfonts/cm/cmcsc10.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmmi12.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><E:/
+Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/Programs/MiKTeX/fo
+nts/type1/public/amsfonts/cm/cmr12.pfb><E:/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr17.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pf
+b><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><E:/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmti12.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/sy
+mbols/msam10.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10
+.pfb>
 Output written on Report.pdf (6 pages, 532955 bytes).
 PDF statistics:
  78 PDF objects out of 1000 (max. 8388607)
