@@ -367,4 +367,52 @@ When we chose starting point at $x_1=-1, x_2=0.7$ or $x_1=1, x_2=-0.7$ or $x_1=0
 	\includegraphics[width=16cm]{gem_results.png}
 	\caption{Location of four minima and saddle points.}
 \end{figure}		
+
+\subsection{Practical example - spring-carts system}
+Interpretation:
+
+Figure 10 shows two frictionless rigid bodies (carts) A and B connected by three linear elastic springs having spring constants $k_1n k_2, k_3$. The springs are at their natural positions when the applied force $P$ is zero. The task is to find the displacement $x_1$ and $x_2$ under the force $P$ by using principle of minimum potential energy.
+
+\begin{figure}[H]
+	\includegraphics[width=16cm]{springs.png}
+	\caption{Spring-cart system.}
+\end{figure}
+
+Function equation:
+\begin{equation}
+y=(\frac{1}{2}k_2x_1^2+\frac{1}{2}k_3(x_2-x_1)^2+\frac{1}{2}k_1x_2^2)-Px_2
+\end{equation}
+Lets assume:
+$k_1=12, k_2=30, k_3=15, P=100$.
+\\\\
+Function figures:
+\begin{figure}[H]
+	\includegraphics[width=8cm]{springs_3D.jpg}
+	\caption{Analyzed function 3D view.}
+\end{figure}
+\begin{figure}[H]
+	\includegraphics[width=8cm]{springs_cont.png}
+	\caption{Analyzed function contour view.}
+\end{figure}
+
+	\begin{table}[H]
+		\begin{tabularx}{\textwidth}{c|X|c|c|c|c|}
+			iteration & point coordinates & function value & $C_1$ value & $C_2$ value & $C_3$ value\\
+			\hline
+			0 & $10, 10$ & $500$ & $101.736$ & - & - \\
+			\hline
+			1 & $2.083, 3.75$ & $-187.5$ & $101.736$ & $10.086$ & $787.5$ \\
+			\hline
+			2 & $2.083, 3.75$ & $-187.5$ & $5.6.52\cdot10^{-31}$ & $10.086$ & $787.5$ \\
+			\hline		
+		\end{tabularx}	
+	\end{table}
+
+\begin{figure}[H]
+	\includegraphics[width=16cm]{spirngs_results.png}
+	\caption{Founded minimum.}
+\end{figure}	
+
+Example taken from "Engineering Optimization: Theory and Practice" (Authors: Singiresu S. Rao,S. S. Rao).
+
 \end{document}

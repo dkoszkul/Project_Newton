@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.8.21)  23 MAY 2015 14:59
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.8.21)  23 MAY 2015 17:15
 entering extended mode
 **Report.tex
 (C:\Users\Rudy\Documents\GitHub\Project_Newton\report\Report.tex
@@ -770,15 +770,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 258--273
 
 [8]
 File: gem_results.png Graphic file (type QTm)
- <use  "gem_results.png" > [9] [10]
+ <use  "gem_results.png" > [9]
+File: springs.png Graphic file (type QTm)
+ <use  "springs.png" > [10]
+File: springs_3D.jpg Graphic file (type QTm)
+
+<use  "springs_3D.jpg" >
+Underfull \hbox (badness 10000) in paragraph at lines 384--392
+
+ []
+
+File: springs_cont.png Graphic file (type QTm)
+<use  "springs_cont.png" > [11]
+File: spirngs_results.png Graphic file (type QTm)
+ <use  "spirngs_results.png" > [12] [13]
 (C:\Users\Rudy\Documents\GitHub\Project_Newton\report\Report.aux) ) 
 Here is how much of TeX's memory you used:
- 11079 strings out of 429035
- 228060 string characters out of 3166907
+ 11087 strings out of 429035
+ 228180 string characters out of 3166907
  261669 words of memory out of 3000000
- 14261 multiletter control sequences out of 15000+200000
+ 14265 multiletter control sequences out of 15000+200000
  15880 words of font info for 62 fonts, out of 3000000 for 9000
  912 hyphenation exceptions out of 8191
  33i,12n,39p,10433b,484s stack positions out of 5000i,500n,10000p,200000b,50000s
 
-Output written on Report.pdf (10 pages).
+Output written on Report.pdf (13 pages).
