@@ -1,73 +1,75 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2015.1.2)  21 MAY 2015 16:26
+This is XeTeX, Version 3.1415926-2.4-0.9998 (MiKTeX 2.9) (preloaded format=xelatex 2014.8.21)  23 MAY 2015 14:59
 entering extended mode
 **Report.tex
-("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.tex"
+(C:\Users\Rudy\Documents\GitHub\Project_Newton\report\Report.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
 croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2013-05-26, greek, gujarati, hindi, hungarian, iceland
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
 ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
  lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
-german-x-2013-05-26, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
 ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
 an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
 ishmax, welsh, loaded.
-(E:\Programs\MiKTeX\tex\latex\base\article.cls
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(E:\Programs\MiKTeX\tex\latex\base\size12.clo
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+Requested font "cmr12" at 12.0pt
+ -> cmr12
 )
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(E:\Programs\MiKTeX\tex\latex\siunitx\siunitx.sty
-(E:\Programs\MiKTeX\tex\latex\l3kernel\expl3.sty
-Package: expl3 2015/03/01 v5547 L3 programming layer (loader) 
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\siunitx\siunitx.sty"
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\expl3.sty"
+Package: expl3 2014/07/20 v5241 L3 programming layer (loader) 
 
-(E:\Programs\MiKTeX\tex\latex\l3kernel\expl3-code.tex
-Package: expl3 2015/03/01 v5547 L3 programming layer (code) 
-L3 Module: l3bootstrap 2015/02/28 v5542 L3 Bootstrap code
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\expl3-code.tex"
+Package: expl3 2014/07/20 v5241 L3 programming layer (code) 
+L3 Module: l3bootstrap 2014/05/26 v4889 L3 Bootstrap code
 
-(E:\Programs\MiKTeX\tex\latex\misc\etex.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\misc\etex.sty"
 Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count87
+\et@xins=\count88
 )
-L3 Module: l3names 2015/02/24 v5535 L3 Namespace for primitives
-L3 Module: l3basics 2015/01/27 v5500 L3 Basic definitions
-L3 Module: l3expan 2014/11/27 v5472 L3 Argument expansion
-L3 Module: l3tl 2015/01/27 v5500 L3 Token lists
-L3 Module: l3str 2015/03/01 v5545 L3 Strings
-L3 Module: l3seq 2014/08/23 v5354 L3 Sequences and stacks
-L3 Module: l3int 2015/02/21 v5529 L3 Integers
-\c_max_int=\count88
-\l_tmpa_int=\count89
-\l_tmpb_int=\count90
-\g_tmpa_int=\count91
-\g_tmpb_int=\count92
-L3 Module: l3quark 2014/08/23 v5354 L3 Quarks
-L3 Module: l3prg 2014/08/23 v5354 L3 Control structures
-\g__prg_map_int=\count93
-L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
-L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
-L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
-L3 Module: l3msg 2015/02/26 v5537 L3 Messages
-L3 Module: l3file 2014/08/24 v5369 L3 File and I/O operations
-\l_iow_line_count_int=\count94
-\l__iow_target_count_int=\count95
-\l__iow_current_line_int=\count96
-\l__iow_current_word_int=\count97
-\l__iow_current_indentation_int=\count98
-L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
+L3 Module: l3names 2014/06/02 v4993 L3 Namespace for primitives
+L3 Module: l3basics 2014/07/09 v5187 L3 Basic definitions
+L3 Module: l3expan 2014/06/16 v5146 L3 Argument expansion
+L3 Module: l3tl 2014/07/17 v5214 L3 Token lists
+L3 Module: l3str 2014/06/19 v5158 L3 Strings
+L3 Module: l3seq 2014/07/18 v5232 L3 Sequences and stacks
+L3 Module: l3int 2014/07/11 v5197 L3 Integers
+\c_max_int=\count89
+\l_tmpa_int=\count90
+\l_tmpb_int=\count91
+\g_tmpa_int=\count92
+\g_tmpb_int=\count93
+L3 Module: l3quark 2014/05/26 v4889 L3 Quarks
+L3 Module: l3prg 2014/05/04 v4728 L3 Control structures
+\g__prg_map_int=\count94
+L3 Module: l3clist 2014/07/19 v5237 L3 Comma separated lists
+L3 Module: l3token 2014/05/26 v4889 L3 Experimental token manipulation
+L3 Module: l3prop 2014/07/17 v5215 L3 Property lists
+L3 Module: l3msg 2014/05/30 v4943 L3 Messages
+L3 Module: l3file 2014/07/09 v5188 L3 File and I/O operations
+\l_iow_line_count_int=\count95
+\l__iow_target_count_int=\count96
+\l__iow_current_line_int=\count97
+\l__iow_current_word_int=\count98
+\l__iow_current_indentation_int=\count99
+L3 Module: l3skip 2014/07/17 v5211 L3 Dimensions and skips
 \c_zero_dim=\dimen103
 \c_max_dim=\dimen104
 \l_tmpa_dim=\dimen105
@@ -86,26 +88,26 @@ L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
 \l_tmpb_muskip=\muskip13
 \g_tmpa_muskip=\muskip14
 \g_tmpb_muskip=\muskip15
-L3 Module: l3keys 2015/01/27 v5500 L3 Key-value interfaces
-\g__keyval_level_int=\count99
-\l_keys_choice_int=\count100
-L3 Module: l3fp 2014/08/22 v5336 L3 Floating points
-\c__fp_leading_shift_int=\count101
-\c__fp_middle_shift_int=\count102
-\c__fp_trailing_shift_int=\count103
-\c__fp_big_leading_shift_int=\count104
-\c__fp_big_middle_shift_int=\count105
-\c__fp_big_trailing_shift_int=\count106
-\c__fp_Bigg_leading_shift_int=\count107
-\c__fp_Bigg_middle_shift_int=\count108
-\c__fp_Bigg_trailing_shift_int=\count109
-L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
+L3 Module: l3keys 2014/06/12 v5121 L3 Key-value interfaces
+\g__keyval_level_int=\count100
+\l_keys_choice_int=\count101
+L3 Module: l3fp 2014/07/18 v5223 L3 Floating points
+\c__fp_leading_shift_int=\count102
+\c__fp_middle_shift_int=\count103
+\c__fp_trailing_shift_int=\count104
+\c__fp_big_leading_shift_int=\count105
+\c__fp_big_middle_shift_int=\count106
+\c__fp_big_trailing_shift_int=\count107
+\c__fp_Bigg_leading_shift_int=\count108
+\c__fp_Bigg_middle_shift_int=\count109
+\c__fp_Bigg_trailing_shift_int=\count110
+L3 Module: l3box 2014/05/31 v4974 L3 Experimental boxes
 \c_empty_box=\box26
 \l_tmpa_box=\box27
 \l_tmpb_box=\box28
 \g_tmpa_box=\box29
 \g_tmpb_box=\box30
-L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
+L3 Module: l3coffins 2014/05/28 v4899 L3 Coffin code layer
 \l__coffin_internal_box=\box31
 \l__coffin_internal_dim=\dimen109
 \l__coffin_offset_x_dim=\dimen110
@@ -125,8 +127,8 @@ L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
 \l__coffin_display_offset_dim=\dimen116
 \l__coffin_display_x_dim=\dimen117
 \l__coffin_display_y_dim=\dimen118
-L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
-L3 Module: l3candidates 2015/03/01 v5544 L3 Experimental additions to l3kernel
+L3 Module: l3color 2014/04/30 v4712 L3 Experimental color support
+L3 Module: l3candidates 2014/07/18 v5232 L3 Experimental additions to l3kernel
 \l__box_top_dim=\dimen119
 \l__box_bottom_dim=\dimen120
 \l__box_left_dim=\dimen121
@@ -144,15 +146,14 @@ L3 Module: l3candidates 2015/03/01 v5544 L3 Experimental additions to l3kernel
 \l__coffin_scaled_total_height_dim=\dimen132
 \l__coffin_scaled_width_dim=\dimen133
 )
-(E:\Programs\MiKTeX\tex\latex\l3kernel\l3unicode-data.def
-File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\l3unicode-data.def"
+File: l3unicode-data.def 2014/06/30 v5166 L3 Unicode data
 )
-(E:\Programs\MiKTeX\tex\latex\l3kernel\l3pdfmode.def
-File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count110
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3kernel\l3xdvipdfmx.def"
+File: l3xdvidpfmx.def 2014/07/18 v5232 L3 Experimental driver: xdvipdfmx
 ))
-(E:\Programs\MiKTeX\tex\latex\l3packages\xparse\xparse.sty
-Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3packages\xparse\xparse.sty"
+Package: xparse 2014/07/20 v5241 L3 Experimental document command parser
 \l__xparse_current_arg_int=\count111
 \l__xparse_m_args_int=\count112
 \l__xparse_mandatory_args_int=\count113
@@ -161,15 +162,15 @@ Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
 )
 Package: siunitx 2015/01/21 v2.6e A comprehensive (SI) units package
 
-(E:\Programs\MiKTeX\tex\latex\amsmath\amstext.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(E:\Programs\MiKTeX\tex\latex\amsmath\amsgen.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks14
 \ex@=\dimen134
 ))
-(E:\Programs\MiKTeX\tex\latex\tools\array.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen135
 \extrarowheight=\dimen136
@@ -177,8 +178,8 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip49
 \backup@length=\skip50
 )
-(E:\Programs\MiKTeX\tex\latex\l3packages\l3keys2e\l3keys2e.sty
-Package: l3keys2e 2014/11/25 v5471 LaTeX2e option processing using LaTeX3 keys
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\l3packages\l3keys2e\l3keys2e.sty"
+Package: l3keys2e 2014/07/20 v5241 LaTeX2e option processing using LaTeX3 keys
 )
 Variant \tl_if_blank:VTF already defined; not changing it on line 50
 \l__siunitx_tmp_box=\box41
@@ -227,201 +228,209 @@ Variant \prop_get:NVNTF already defined; not changing it on line 382
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareBinaryPrefix with sig. 'mmm' on line 7176.
+. Defining document command \DeclareBinaryPrefix with arg. spec. 'mmm' on line
+. 7176.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIPostPower with sig. 'mm' on line 7179.
+. Defining document command \DeclareSIPostPower with arg. spec. 'mm' on line
+. 7179.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIPrefix with sig. 'mmm' on line 7182.
+. Defining document command \DeclareSIPrefix with arg. spec. 'mmm' on line
+. 7182.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIPrePower with sig. 'mm' on line 7185.
+. Defining document command \DeclareSIPrePower with arg. spec. 'mm' on line
+. 7185.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIQualifier with sig. 'mm' on line 7188.
+. Defining document command \DeclareSIQualifier with arg. spec. 'mm' on line
+. 7188.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIUnit with sig. 'O{}mm' on line 7191.
+. Defining document command \DeclareSIUnit with arg. spec. 'O{}mm' on line
+. 7191.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \DeclareSIUnitWithOptions with sig. 'mmm' on line 7194.
+. Defining document command \DeclareSIUnitWithOptions with arg. spec. 'mmm' on
+. line 7194.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \ang with sig. 'o>{\SplitArgument {2}{;}}m' on line 7209.
+. Defining document command \ang with arg. spec. 'o>{\SplitArgument {2}{;}}m'
+. on line 7209.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \num with sig. 'om' on line 7217.
+. Defining document command \num with arg. spec. 'om' on line 7217.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \numlist with sig. 'o>{\SplitList {;}}m' on line 7225.
+. Defining document command \numlist with arg. spec. 'o>{\SplitList {;}}m' on
+. line 7225.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \numrange with sig. 'omm' on line 7233.
+. Defining document command \numrange with arg. spec. 'omm' on line 7233.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \SIlist with sig. 'o>{\SplitList {;}}mm' on line 7244.
+. Defining document command \SIlist with arg. spec. 'o>{\SplitList {;}}mm' on
+. line 7244.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \SIrange with sig. 'ommm' on line 7255.
+. Defining document command \SIrange with arg. spec. 'ommm' on line 7255.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \SI with sig. 'omom' on line 7266.
+. Defining document command \SI with arg. spec. 'omom' on line 7266.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \sisetup with sig. 'm' on line 7269.
+. Defining document command \sisetup with arg. spec. 'm' on line 7269.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \tablenum with sig. 'om' on line 7281.
+. Defining document command \tablenum with arg. spec. 'om' on line 7281.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \si with sig. 'om' on line 7292.
+. Defining document command \si with arg. spec. 'om' on line 7292.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \__siunitx_bookmark_num:w with sig. 'om' on line 7339.
+. Defining document command \__siunitx_bookmark_num:w with arg. spec. 'om' on
+. line 7339.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \__siunitx_bookmark_numrange:w with sig. 'omm' on line
-. 7341.
+. Defining document command \__siunitx_bookmark_numrange:w with arg. spec.
+. 'omm' on line 7341.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \__siunitx_bookmark_SI:w with sig. 'omom' on line 7343.
+. Defining document command \__siunitx_bookmark_SI:w with arg. spec. 'omom' on
+. line 7343.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \__siunitx_bookmark_SIlist:w with sig. 'omm' on line 7345.
+. Defining document command \__siunitx_bookmark_SIlist:w with arg. spec. 'omm'
+. on line 7345.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \__siunitx_bookmark_SIrange:w with sig. 'ommm' on line
-. 7347.
+. Defining document command \__siunitx_bookmark_SIrange:w with arg. spec.
+. 'ommm' on line 7347.
 .................................................
 .................................................
 . LaTeX info: "xparse/define-command"
 . 
-. Defining command \__siunitx_bookmark_si:w with sig. 'om' on line 7348.
+. Defining document command \__siunitx_bookmark_si:w with arg. spec. 'om' on
+. line 7348.
 .................................................
 \g__file_internal_ior=\read1
 
-(E:\Programs\MiKTeX\tex\latex\beamer\base\translator\translator.sty
+(C:\Users\Rudy\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\tran
+slator.sty
 Package: translator 2010/06/12 ver 1.10
-
-(E:\Programs\MiKTeX\tex\latex\graphics\keyval.sty
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
-(E:\Programs\MiKTeX\tex\latex\beamer\base\translator\translator-language-mappin
-gs.tex))) (E:\Programs\MiKTeX\tex\latex\graphics\graphicx.sty
+(C:\Users\Rudy\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\tran
+slator-language-mappings.tex)))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(E:\Programs\MiKTeX\tex\latex\graphics\graphics.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(E:\Programs\MiKTeX\tex\latex\graphics\trig.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(E:\Programs\MiKTeX\tex\latex\00miktex\graphics.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: xetex.def on input line 91.
 
-(E:\Programs\MiKTeX\tex\latex\pdftex-def\pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+("C:\Program Files (x86)\MiKTeX 2.9\tex\xelatex\xetex-def\xetex.def"
+File: xetex.def 2009/11/22 v0.94 LaTeX color/graphics driver for XeTeX (RRM/JK)
 
-(E:\Programs\MiKTeX\tex\generic\oberdiek\infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(E:\Programs\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count133
 ))
 \Gin@req@height=\dimen149
 \Gin@req@width=\dimen150
 )
-(E:\Programs\MiKTeX\tex\latex\natbib\natbib.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\natbib\natbib.sty"
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip55
 \bibsep=\skip56
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count134
+\c@NAT@ctr=\count133
 )
-(E:\Programs\MiKTeX\tex\latex\amsmath\amsmath.sty
-Package: amsmath 2013/01/14 v2.14 AMS math features
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip57
 
 For additional information on amsmath, use the `?' option.
-(E:\Programs\MiKTeX\tex\latex\amsmath\amsbsy.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen151
 )
-(E:\Programs\MiKTeX\tex\latex\amsmath\amsopn.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
-\inf@bad=\count135
-LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count136
-\leftroot@=\count137
-LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count138
-\DOTSCASE@=\count139
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
+\inf@bad=\count134
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count135
+\leftroot@=\count136
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count137
+\DOTSCASE@=\count138
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
 \Mathstrutbox@=\box48
 \strutbox@=\box49
 \big@size=\dimen152
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count140
-\c@MaxMatrixCols=\count141
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count139
+\c@MaxMatrixCols=\count140
 \dotsspace@=\muskip16
-\c@parentequation=\count142
-\dspbrk@lvl=\count143
+\c@parentequation=\count141
+\dspbrk@lvl=\count142
 \tag@help=\toks17
-\row@=\count144
-\column@=\count145
-\maxfields@=\count146
+\row@=\count143
+\column@=\count144
+\maxfields@=\count145
 \andhelp@=\toks18
 \eqnshift@=\dimen153
 \alignsep@=\dimen154
@@ -433,38 +442,38 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip58
 \multlinetaggap=\skip59
 \mathdisplay@stack=\toks20
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
 )
-(E:\Programs\MiKTeX\tex\latex\float\float.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count147
+\c@float@type=\count146
 \float@exts=\toks21
 \float@box=\box50
 \@float@everytoks=\toks22
 \@floatcapt=\box51
 )
-(E:\Programs\MiKTeX\tex\latex\amsfonts\amssymb.sty
-Package: amssymb 2013/01/14 v3.01 AMS font symbols
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
+Package: amssymb 2009/06/22 v3.00
 
-(E:\Programs\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(E:\Programs\MiKTeX\tex\latex\enumitem\enumitem.sty
+(C:\Users\Rudy\AppData\Roaming\MiKTeX\2.9\tex\latex\enumitem\enumitem.sty
 Package: enumitem 2011/09/28 v3.5.2 Customized lists
 \labelindent=\skip60
 \enit@outerparindent=\dimen159
 \enit@toks=\toks23
 \enit@inbox=\box52
-\enitdp@description=\count148
+\enitdp@description=\count147
 )
-(E:\Programs\MiKTeX\tex\latex\supertabular\supertabular.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\supertabular\supertabular.sty"
 Package: supertabular 2004/02/20 v4.1e the supertabular environment
-\c@tracingst=\count149
+\c@tracingst=\count148
 \ST@wd=\dimen160
 \ST@rightskip=\skip61
 \ST@leftskip=\skip62
@@ -481,44 +490,44 @@ Package: supertabular 2004/02/20 v4.1e the supertabular environment
 \ST@dimen=\dimen170
 \ST@pbox=\box53
 )
-(E:\Programs\MiKTeX\tex\latex\tools\tabularx.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
 Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
 \TX@col@width=\dimen171
 \TX@old@table=\dimen172
 \TX@old@col=\dimen173
 \TX@target=\dimen174
 \TX@delta=\dimen175
-\TX@cols=\count150
+\TX@cols=\count149
 \TX@ftn=\toks24
 )
-(E:\Programs\MiKTeX\tex\latex\tools\hhline.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\hhline.sty"
 Package: hhline 1994/05/23 v2.03 Table rule package (DPC)
 )
-(E:\Programs\MiKTeX\tex\latex\wrapfig\wrapfig.sty
+(C:\Users\Rudy\AppData\Roaming\MiKTeX\2.9\tex\latex\wrapfig\wrapfig.sty
 \wrapoverhang=\dimen176
 \WF@size=\dimen177
-\c@WF@wrappedlines=\count151
+\c@WF@wrappedlines=\count150
 \WF@box=\box54
 \WF@everypar=\toks25
 Package: wrapfig 2003/01/31  v 3.6
 )
-(E:\Programs\MiKTeX\tex\latex\geometry\geometry.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
 Package: geometry 2010/09/12 v5.6 Page Geometry
 
-(E:\Programs\MiKTeX\tex\generic\oberdiek\ifpdf.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
 Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package ifpdf Info: pdfTeX in PDF mode is not detected.
 )
-(E:\Programs\MiKTeX\tex\generic\oberdiek\ifvtex.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
 Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
 )
-(E:\Programs\MiKTeX\tex\generic\ifxetex\ifxetex.sty
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\Gm@cnth=\count152
-\Gm@cntv=\count153
-\c@Gm@tempcnt=\count154
+\Gm@cnth=\count151
+\Gm@cntv=\count152
+\c@Gm@tempcnt=\count153
 \Gm@bindingoffset=\dimen178
 \Gm@wd@mp=\dimen179
 \Gm@odd@mp=\dimen180
@@ -529,9 +538,9 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@layoutvoffset=\dimen185
 \Gm@dimlist=\toks26
 
-(E:\Programs\MiKTeX\tex\latex\geometry\geometry.cfg))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\xelatex\xetexconfig\geometry.cfg"))
 *geometry* verbose mode - [ newgeometry ] result:
-* driver: 
+* driver: pdftex
 * paper: <default>
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
@@ -563,7 +572,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.aux")
+(C:\Users\Rudy\Documents\GitHub\Project_Newton\report\Report.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 32.
@@ -577,28 +586,14 @@ LaTeX Font Info:    ... okay on input line 32.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 32.
 LaTeX Font Info:    ... okay on input line 32.
 
-(E:\Programs\MiKTeX\tex\latex\beamer\base\translator\dicts\translator-basic-dic
-tionary\translator-basic-dictionary-English.dict
+(C:\Users\Rudy\AppData\Roaming\MiKTeX\2.9\tex\latex\beamer\base\translator\dict
+s\translator-basic-dictionary\translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 )
-(E:\Programs\MiKTeX\tex\latex\siunitx\siunitx-abbreviations.cfg
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\siunitx\siunitx-abbreviations.cfg
+"
 File: siunitx-abbreviations.cfg 2015/01/21 v2.6e siunitx: Abbreviated units
 )
-(E:\Programs\MiKTeX\tex\context\base\supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count155
-\scratchdimen=\dimen186
-\scratchbox=\box55
-\nofMPsegments=\count156
-\nofMParguments=\count157
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count158
-\MPscratchDim=\dimen187
-\MPnumerator=\count159
-\makeMPintoPDFobject=\count160
-\everyMPtoPDFconversion=\toks28
-)
-*geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
 * driver: pdftex
@@ -632,67 +627,158 @@ File: siunitx-abbreviations.cfg 2015/01/21 v2.6e siunitx: Abbreviated units
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-\c__siunitx_mathsf_int=\count161
+\c__siunitx_mathsf_int=\count154
+Requested font "cmr8" at 8.0pt
+ -> cmr8
+Requested font "cmr6" at 6.0pt
+ -> cmr6
+Requested font "cmmi12" at 12.0pt
+ -> cmmi12
+Requested font "cmmi8" at 8.0pt
+ -> cmmi8
+Requested font "cmmi6" at 6.0pt
+ -> cmmi6
+Requested font "cmsy10" at 12.0pt
+ -> cmsy10
+Requested font "cmsy8" at 8.0pt
+ -> cmsy8
+Requested font "cmsy6" at 6.0pt
+ -> cmsy6
+Requested font "cmex10" at 12.0pt
+ -> cmex10
+Requested font "cmex8" at 8.0pt
+ -> cmex8
+Requested font "cmex7" at 6.0pt
+ -> cmex7
 LaTeX Font Info:    Try loading font information for U+msa on input line 32.
-(E:\Programs\MiKTeX\tex\latex\amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
+Requested font "msam10" at 12.0pt
+ -> msam10
+Requested font "msam10" at 8.0pt
+ -> msam10
+Requested font "msam7" at 6.0pt
+ -> msam7
 LaTeX Font Info:    Try loading font information for U+msb on input line 32.
 
-(E:\Programs\MiKTeX\tex\latex\amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-\c__siunitx_mathtt_int=\count162
+Requested font "msbm10" at 12.0pt
+ -> msbm10
+Requested font "msbm10" at 8.0pt
+ -> msbm10
+Requested font "msbm7" at 6.0pt
+ -> msbm7
+Requested font "cmss12" at 12.0pt
+ -> cmss12
+Requested font "cmss8" at 8.0pt
+ -> cmss8
+Requested font "cmss8" at 6.0pt
+ -> cmss8
+\c__siunitx_mathtt_int=\count155
+Requested font "cmtt12" at 12.0pt
+ -> cmtt12
+Requested font "cmtt8" at 8.0pt
+ -> cmtt8
+Requested font "cmtt8" at 6.0pt
+ -> cmtt8
+Requested font "cmr17" at 20.74pt
+ -> cmr17
+Requested font "cmr12" at 14.4pt
+ -> cmr12
+Requested font "cmmi12" at 14.4pt
+ -> cmmi12
+Requested font "cmsy10" at 14.4pt
+ -> cmsy10
+Requested font "cmex10" at 14.4pt
+ -> cmex10
+Requested font "cmex7" at 7.0pt
+ -> cmex7
+Requested font "cmss12" at 14.4pt
+ -> cmss12
+Requested font "cmss10" at 10.0pt
+ -> cmss10
+Requested font "cmss8" at 7.0pt
+ -> cmss8
+Requested font "cmtt12" at 14.4pt
+ -> cmtt12
+Requested font "cmtt10" at 10.0pt
+ -> cmtt10
+Requested font "cmtt8" at 7.0pt
+ -> cmtt8
+Requested font "msam10" at 14.4pt
+ -> msam10
+Requested font "msam10" at 10.0pt
+ -> msam10
+Requested font "msam7" at 7.0pt
+ -> msam7
+Requested font "msbm10" at 14.4pt
+ -> msbm10
+Requested font "msbm10" at 10.0pt
+ -> msbm10
+Requested font "msbm7" at 7.0pt
+ -> msbm7
+Requested font "cmcsc10" at 14.4pt
+ -> cmcsc10
+Requested font "cmr17" at 17.28pt
+ -> cmr17
+Requested font "cmbx12" at 17.28pt
+ -> cmbx12
+Requested font "cmbx12" at 14.4pt
+ -> cmbx12
+Requested font "cmti12" at 12.0pt
+ -> cmti12
+Requested font "cmbx12" at 12.0pt
+ -> cmbx12
  [1
 
 
-{C:/Users/Dominik Koszkul/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-<four_3d.jpg, id=16, 539.01375pt x 467.49657pt>
-File: four_3d.jpg Graphic file (type jpg)
- <use four_3d.jpg>
-Package pdftex.def Info: four_3d.jpg used on input line 64.
-(pdftex.def)             Requested size: 341.43306pt x 296.13654pt.
+]
+File: four_3d.jpg Graphic file (type QTm)
 
-<four_cont.jpg, id=17, 545.78906pt x 468.24937pt>
-File: four_cont.jpg Graphic file (type jpg)
- <use four_cont.jpg>
-Package pdftex.def Info: four_cont.jpg used on input line 68.
-(pdftex.def)             Requested size: 341.43306pt x 292.92664pt.
- [2 <D:/Dysk Google/STUDIA/GIT/Project_Newton/report/four_3d.jpg>]
-Underfull \hbox (badness 10000) in paragraph at lines 73--88
+<use  "four_3d.jpg" >
+File: four_cont.jpg Graphic file (type QTm)
+ <use  "four_cont.jpg" > [2]
+Underfull \hbox (badness 10000) in paragraph at lines 74--89
 
  []
 
-[3 <D:/Dysk Google/STUDIA/GIT/Project_Newton/report/four_cont.jpg>]
-<four_results.png, id=24, 317.68687pt x 310.15875pt>
-File: four_results.png Graphic file (type png)
- <use four_results.png>
-Package pdftex.def Info: four_results.png used on input line 139.
-(pdftex.def)             Requested size: 455.24408pt x 444.49384pt.
+[3]
+File: four_results.png Graphic file (type QTm)
+ <use  "four_results.png" > [4]
+File: himm.png Graphic file (type QTm)
+ <use  "himm.png" >
+File: himm_count.png Graphic file (type QTm)
+ <use  "himm_count.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 163--180
 
-[4 <D:/Dysk Google/STUDIA/GIT/Project_Newton/report/four_results.png>]
-("D:\Dysk Google\STUDIA\GIT\Project_Newton\report\Report.aux") ) 
+ []
+
+[5]
+File: himm_results.png Graphic file (type QTm)
+ <use  "himm_results.png" > [6]
+File: gem_3D.png Graphic file (type QTm)
+ <use  "gem_3D.png" >
+File: gem_cont.png Graphic file (type QTm)
+ <use  "gem_cont.png" >
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 258--273
+
+ []
+
+[8]
+File: gem_results.png Graphic file (type QTm)
+ <use  "gem_results.png" > [9] [10]
+(C:\Users\Rudy\Documents\GitHub\Project_Newton\report\Report.aux) ) 
 Here is how much of TeX's memory you used:
- 12071 strings out of 493921
- 244790 string characters out of 3150862
- 268783 words of memory out of 3000000
- 15271 multiletter control sequences out of 15000+200000
+ 11079 strings out of 429035
+ 228060 string characters out of 3166907
+ 261669 words of memory out of 3000000
+ 14261 multiletter control sequences out of 15000+200000
  15880 words of font info for 62 fonts, out of 3000000 for 9000
- 841 hyphenation exceptions out of 8191
- 39i,12n,39p,10433b,484s stack positions out of 5000i,500n,10000p,200000b,50000s
-<E:/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><E:/Programs/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmcsc10.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/
-cm/cmmi12.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><E:/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><E:/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmr17.pfb><E:/Programs/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmr8.pfb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb><E:/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><E:/Programs/Mi
-KTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><E:/Programs/MiKTeX/fonts/type1/
-public/amsfonts/symbols/msam10.pfb>
-Output written on Report.pdf (4 pages, 430022 bytes).
-PDF statistics:
- 62 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 912 hyphenation exceptions out of 8191
+ 33i,12n,39p,10433b,484s stack positions out of 5000i,500n,10000p,200000b,50000s
 
+Output written on Report.pdf (10 pages).
