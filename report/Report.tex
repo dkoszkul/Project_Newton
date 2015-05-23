@@ -1,13 +1,10 @@
 \documentclass[12pt]{article}
 
-%\usepackage[version=3]{mhchem} % Package for chemical equation typesetting
 \usepackage{siunitx} % Provides the \SI{}{} and \si{} command for typesetting SI units
 \usepackage{graphicx} % Required for the inclusion of images
-\usepackage{natbib} % Required to change bibliography style to APA
 \usepackage{amsmath} % Required for some math elements 
 \usepackage{float}
 \usepackage{amssymb}
-\usepackage{enumitem}
 %pakiety wspomagaj?ce i poprawiaj?ce sk?adanie tabel
 \usepackage{supertabular}
 \usepackage{array}
@@ -18,8 +15,6 @@
 
 
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
-
-\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 
 \title{Newton's method} % Title
 
@@ -44,10 +39,19 @@ where $n \leqslant 5$. Newton's method is a gradient method without constraints.
 
 
 \subsection{Newton's method}
-Newton's method is a local optimization type algorithm. To implement the method, stop criteria should be also known. In this case we have three main stop criteria for Newton's method and one additional that ensures that program stops computing after exceeding maximum iterations number.
+Newton's method is a local optimization type algorithm. The algorithm is presented in the following steps:
+\begin{enumerate}
+\item compute $f(x^i)$ and gradient $\triangledown f(x^i)$,
+\item compute direction $d^i=-H^{-1} \triangledown f(x^i)$,
+\item compute step length in selected direction (use method which counts minimum in selected direction),
+\item check stop criteria (if any criteria are fulfilled then stop and show results),
+\item reply all from step 1 with new counted point $x^{i+1}$.
+\end{enumerate}
+
+ To implement the method, stop criteria should be also known. In this case we have three main stop criteria for Newton's method and one additional that ensures that program stops computing after exceeding maximum iterations number.
 
 \subsubsection{Stop criteria}
-\begin{enumerate}[label=\arabic*.]
+\begin{enumerate}%[label=\arabic*.]
 \item $ <grad f(x^i) \cdot grad f(x^i)> \leqslant \varepsilon_1 $ \\
 Scalar product of the squared gradient of the function in point $x^i$ should be less or equal to $\varepsilon_1 $,
 \item $ ||x^i-x^{i-1}|| \leqslant \varepsilon_2 $ \\
@@ -56,22 +60,44 @@ Euclidean norm of the distance between $x^i$ and $x^{i-1}$ points should be less
 Difference between values of the function in $x^i$ and $x^{i-1}$ should be less or equal to $\varepsilon_3 $,
 \item maximum number of iterations.
 \end{enumerate}  
-If one from these four criteria is satisfied program stops computing and presents results. \\
+If one from these four criteria is satisfied program stops computing and presents results. 
 
 \subsubsection{Convergence}
 Newton's method has a quadratic convergence - convergence rank equals two. This means that, if assumptions are fulfilled, the error decreases in a quadratic way along with the iteration number. In fact the convergence not always is. When the starting point is too far from minimum point the method may be divergent.
 
 \subsubsection{Method constraints}
 \textbf{Minimum in selected direction method} \\
-Pure Newton's method after computing the direction has set step length which is equal to $1.0$. When the starting point is far from the local minimum the method will have huge amount of iterations and this is main reason of long computing time. In our implementation we used method, which can find the best step length in current iteration. This algorithm is \textit{bisection method with Goldstein test}.
+Pure Newton's method after computing the direction has set step length which is equal to $1.0$. When the starting point is far from the local minimum the method will have huge amount of iterations and this is main reason of long computing time. In our implementation we used method, which can find the best step length in current iteration. This algorithm is \textit{bisection method with Goldstein test}. We chose this algorithm because in our program we have to compute the gradient and this method also uses the gradient to compute step length. Moreover this is one of the best method for Newton's algorithm. We can also set precision and thank to this manipulate speed of whole program.
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.9]{images/goldstein.png}
+\caption{Goldstein test example \cite{mathematics}}
+\label{goldstein}
+\end{center}		
+\end{figure}
+Before starting algorithm we have to set a acceptable range $[\tau_l, \tau_r]$ and test coefficient $\beta$. For correct work of the algorithm it is crucial to find proper acceptable range. If it is too small whole algorithm will be computing very slowly due to small step in every iteration. Otherwise if the range is too wide, the method can set to big step and pass the minimum point every time. These values can be set by user before starting computations. \textit{Bisection method with Goldstein test} is represented in the following steps:
+\begin{enumerate}
+\item compute direction derivative and step coefficient $\tau_r > 0$,
+\item designate $\tau=\frac{1}{2}(\tau_l+\tau_r)$ and compute $f(x^i+\tau d)$, where d -- selected direction,
+\item if $f(x^i+\tau d)<f(x^i)+(1-\beta)p\tau$ then $\tau_l \rightarrow \tau$,
+\item if $f(x^i+\tau d)>f(x^i)+\beta p\tau$ then $\tau_r \rightarrow \tau$ and comeback to second step
+\item if third and forth step are not fulfilled stop computing
+\end{enumerate}
+In our implementation we decided that maximum iteration number in this algorithm will be $10$. This constraint is sufficient and allows to find optimal step in each Newton's method iteration.
+
+\section{General information about the program}
+The program was written in \textit{Matlab} environment. We use this program because we know its capabilities very well. Thanks to using \textit{Matlab} we do not need use any external libraries to parse an input (function formula) or plot function / particular steps. To handle any input formula we used internal library, which is integrated with \textit{Matlab} and can find predefined symbols in function -- \textit{symbolic math toolbox}. To design and create graphic user interface we used \textit{GUIDE} library, which is also delivered with \textit{Matlab}.
+\section{Rules for setting initial data}
+\begin{figure}[H]
+\begin{center}
+\includegraphics[scale=0.3]{images/program.png}
+\caption{GUI of our program}
+\label{goldstein}
+\end{center}		
+\end{figure}
 
 
 \vspace{3cm}
-
-Newton's method in optimization is a numeric method, which is used to find local extrema in a defined, differentiable function \textit{f}. In this method we need to construct a sequence $x_n$ from initial point $x_0$ to $x_*$ such that $f'(x_*)=0$. Last point is a local extremum point which we  are looking for.
-\subsubsection{The Newton's method iteration}
-Let $x_0$ be a point 
-
 
 \section{Examples}
 \subsection{Function with four local minima}
@@ -160,5 +186,10 @@ Function figures:
 		\includegraphics[width=16cm]{four_results.png}
 		\caption{Location of four minima.}
 	\end{figure}
+	
+\begin{thebibliography}{99}
+\bibitem{mathematics} http://math.stackexchange.com/questions/873467/goldstein-test-in-nonlinear-programming
+\end{thebibliography}
+	
 	
 \end{document}
