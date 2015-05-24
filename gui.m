@@ -257,6 +257,8 @@ else
             wartosc_koncowa = evaluated_fx(y, X);
             punkty = sprintf('%d;  ',X);
             set(handles.pointType,'String',checkSubmatrices(evaluated_fx(H,X)));
+             X_previous =X;
+            X = X+alfa*d_val;
             pole_wyniku = cellstr(sprintf('x=[  %s]; \n f(x)=%d \n K1:%d \n K2:%d \n K3:%d', punkty, wartosc_koncowa, d_val'*d_val,norm(X_previous-X),norm(evaluated_fx(y, X_previous)-evaluated_fx(y, X))));
             set(handles.result_Edit,'String',pole_wyniku);
         end
