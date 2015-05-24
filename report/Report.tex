@@ -51,7 +51,7 @@ Newton's method is a local optimization type algorithm. The algorithm is present
  To implement the method, stop criteria should be also known. In this case we have three main stop criteria for Newton's method and one additional that ensures that program stops computing after exceeding maximum iterations number.
 
 \subsubsection{Stop criteria}
-\begin{enumerate}%[label=\arabic*.]
+\begin{enumerate}
 \item $ <grad f(x^i) \cdot grad f(x^i)> \leqslant \varepsilon_1 $ \\
 Scalar product of the squared gradient of the function in point $x^i$ should be less or equal to $\varepsilon_1 $,
 \item $ ||x^i-x^{i-1}|| \leqslant \varepsilon_2 $ \\
@@ -83,7 +83,11 @@ Before starting algorithm we have to set a acceptable range $[\tau_l, \tau_r]$ a
 \item if $f(x^i+\tau d)>f(x^i)+\beta p\tau$ then $\tau_r \rightarrow \tau$ and comeback to second step
 \item if third and forth step are not fulfilled stop computing
 \end{enumerate}
-In our implementation we decided that maximum iteration number in this algorithm will be $10$. This constraint is sufficient and allows to find optimal step in each Newton's method iteration.
+In our implementation we decided that maximum iteration number in this algorithm will be $10$. This constraint is sufficient and allows to find optimal step in each Newton's method iteration.\\
+
+\textbf{Sylvester's criterion}\\
+If all the principal minors of the matrix are positive, the matrix is positive-definite, and function $f$ has a minimum in the given point. Else, if the principal minors are alternating between negative and positive $(<, >, <, >, \dots)$ then the matrix is negative-definite, and the function $f$ has a maximum in the point. \cite{sylwek} \\
+This criterion is used in our program to decide whether found point is a local minimum. When the criterion is fulfilled we are sure that the point is the local minimum. Second part of this definition allows to check if the function has any minimum points. Also if initial point is a local maximum, the point where gradient is equal to zero, the program can find it out and display an information about it as a reason to stop computing. 
 
 \section{General information about the program}
 The program was written in \textit{Matlab} environment. We use this program because we know its capabilities very well. Thanks to using \textit{Matlab} we do not need use any external libraries to parse an input (function formula) or plot function / particular steps. To handle any input formula we used internal library, which is integrated with \textit{Matlab} and can find predefined symbols in function -- \textit{symbolic math toolbox}. To design and create graphic user interface we used \textit{GUIDE} library, which is also delivered with \textit{Matlab}.
@@ -481,6 +485,7 @@ Function figures:
 \bibitem{mathematics} http://math.stackexchange.com/questions/873467/goldstein-test-in-nonlinear-programming,
 \bibitem{practical}
 Example taken from 'Engineering Optimization: Theory and Practice', Singiresu S. Rao.
+\bibitem{sylwek} http://math.stackexchange.com/questions/199596/sylvesters-criterion-and-function-extrema
 \end{thebibliography}
 	
 	
