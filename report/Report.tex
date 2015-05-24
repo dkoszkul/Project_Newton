@@ -44,7 +44,7 @@ Newton's method is a local optimization type algorithm. The algorithm is present
 \item compute $f(x^i)$ and gradient $\triangledown f(x^i)$,
 \item compute direction $d^i=-H^{-1} \triangledown f(x^i)$,
 \item compute step length in selected direction (use method which counts minimum in selected direction),
-\item check stop criteria (if any criteria are fulfilled then stop and show results),
+\item check stop criteria (if any criterion is fulfilled then stop and show results),
 \item reply all from step 1 with new counted point $x^{i+1}$.
 \end{enumerate}
 
@@ -63,7 +63,7 @@ Difference between values of the function in $x^i$ and $x^{i-1}$ should be less 
 If one from these four criteria is satisfied program stops computing and presents results. 
 
 \subsubsection{Convergence}
-Newton's method has a quadratic convergence - convergence rank equals two. This means that, if assumptions are fulfilled, the error decreases in a quadratic way along with the iteration number. In fact the convergence not always is. When the starting point is too far from minimum point the method may be divergent.
+Newton's method has a quadratic convergence - rank is equal to two. This means that, if assumptions are fulfilled, the error decreases in a quadratic way along with the iteration number. In fact the convergence not always is. When the starting point is too far from minimum point the method may be divergent. In practise Newton's method is used to find minimum points from initial point which lays in the neighbourhood of these points, due to method accuracy. 
 
 \subsubsection{Method constraints} \label{MC}
 \textbf{Minimum in selected direction method} \\
