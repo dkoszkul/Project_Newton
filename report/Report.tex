@@ -53,14 +53,14 @@ Newton's method is a local optimization type algorithm. The algorithm is present
 \subsubsection{Stop criteria}
 \begin{enumerate}
 \item $ <grad f(x^i) \cdot grad f(x^i)> \leqslant \varepsilon_1 $ \\
-Scalar product of the squared gradient of the function in point $x^i$ should be less or equal to $\varepsilon_1 $,
+Scalar product of the squared gradient of the function in point $x^i$ should be less or equal to $\varepsilon_1 $ - marked as $C_1$,
 \item $ ||x^i-x^{i-1}|| \leqslant \varepsilon_2 $ \\
-Euclidean norm of the distance between $x^i$ and $x^{i-1}$ points should be less or equal to $\varepsilon_2 $,
+Euclidean norm of the distance between $x^i$ and $x^{i-1}$ points should be less or equal to $\varepsilon_2 $ - marked as $C_2$,
 \item $ |f(x^i)-f(x^{i-1})| \leqslant \varepsilon_3 $ \\
-Difference between values of the function in $x^i$ and $x^{i-1}$ should be less or equal to $\varepsilon_3 $,
+Difference between values of the function in $x^i$ and $x^{i-1}$ should be less or equal to $\varepsilon_3 $ - marked as $C_3$,
 \item maximum number of iterations.
 \end{enumerate}  
-If one from these four criteria is satisfied program stops computing and presents results. 
+If one from these four criteria is satisfied program stops computing and presents results. Initial value of $\varepsilon_1 , \varepsilon_2$ and $\varepsilon_3 $ is $10^{-5}$ but initial maximum number of iterations is set $100$.
 
 \subsubsection{Convergence}
 Newton's method has a quadratic convergence - rank is equal to two. This means that, if assumptions are fulfilled, the error decreases in a quadratic way along with the iteration number. In fact the convergence not always is. When the starting point is too far from minimum point the method may be divergent. In practise Newton's method is used to find minimum points from initial point which lays in the neighbourhood of these points, due to method accuracy. 
@@ -129,7 +129,7 @@ y=x_1^4+x_2^4-0.62x_1^2-0.62x_2^2
 Function figures:
 	\begin{figure}[H]
 		\begin{center}
-			\includegraphics[width=12cm]{four_3d.jpg}
+			\includegraphics[width=11cm]{four_3d.jpg}
 		\caption{Analyzed function 3D view.}
 		\end{center}
 	\end{figure}
@@ -154,7 +154,7 @@ Function figures:
 			3 & $5.63\cdot10^{-1}, 5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ & $4.36\cdot10^{-3}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ 
 			\hline
 			4 & $5.63\cdot10^{-1}, 5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ &
-			$7.35\cdot10^{-5}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ \hline
+			$7.35\cdot10^{-6}$ & $8.57\cdot10^{-3}$ & $9.52\cdot10^{-5}$ \\ \hline
 		\end{tabularx}	
 	\end{table}		
 	\begin{table}[H]
@@ -170,7 +170,7 @@ Function figures:
 			3 & $-5.63\cdot10^{-1}, 5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ & $4.36\cdot10^{-3}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ 
 			\hline
 			4 & $-5.63\cdot10^{-1}, 5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ &
-			$7.35\cdot10^{-5}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ \hline
+			$7.35\cdot10^{-6}$ & $8.57\cdot10^{-3}$ & $9.52\cdot10^{-5}$ \\ \hline
 		\end{tabularx}		 
 	\end{table}
 	\begin{table}[H]
@@ -186,7 +186,7 @@ Function figures:
 			3 & $-5.63\cdot10^{-1}, -5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ & $4.36\cdot10^{-3}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ 
 			\hline
 			4 & $-5.63\cdot10^{-1}, -5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ &
-			$7.35\cdot10^{-5}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ \hline
+			$7.35\cdot10^{-6}$ & $8.57\cdot10^{-3}$ & $9.52\cdot10^{-5}$ \\ \hline
 		\end{tabularx}		 
 	\end{table}
 	\begin{table}[H]
@@ -202,14 +202,14 @@ Function figures:
 			3 & $5.63\cdot10^{-1}, -5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ & $4.36\cdot10^{-3}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ 
 			\hline
 			4 & $5.63\cdot10^{-1}, -5.63\cdot10^{-1}$  & $-1.92\cdot10^{-1}$ &
-			$7.35\cdot10^{-5}$ & $6.6\cdot10^{-2}$ & $7.5\cdot10^{-3}$ \\ \hline
+			$7.35\cdot10^{-6}$ & $8.57\cdot10^{-3}$ & $9.52\cdot10^{-5}$ \\ \hline
 		\end{tabularx}		 
 	\end{table}
 	When we chose starting point at $x_1=0, x_2=0$ then program returned: 'local maximum. Computation stopped'. This is caused by checking Silvester's criterion. Even if algorithm find local extrema it can distinguish maxima or minima. 
 	
 	\begin{figure}[H]
 		\begin{center}
-			\includegraphics[width=13.5cm]{four_results.png}
+			\includegraphics[width=12cm]{four_results.png}
 			\caption{Location of four minima.}
 		\end{center}
 	\end{figure}
@@ -250,8 +250,9 @@ Function figures:
 		\hline
 		4 & $3, 2$ & $7.29\cdot10^{-5}$ & $3\cdot10^{-3}$ & $5.47\cdot10^{-2}$ & $4.53\cdot10^{-2}$ \\
 		\hline
-		5 & $3, 2$ & $7.29\cdot10^{-5}$ & $5.28\cdot10^{-6}$ & $5.47\cdot10^{-2}$ & $4.53\cdot10^{-2}$\\
+		5 & $3, 2$ & $7.29\cdot10^{-5}$ & $5.28\cdot10^{-6}$ & $2.3\cdot10^{-3}$ & $7.29\cdot10^{-5}$\\
 		\hline
+
 	\end{tabularx}	
 \end{table}		
 
@@ -269,7 +270,7 @@ Function figures:
 		\hline
 		4 & $3.585, -1.852$ & $2.13\cdot10^{-4}$ & $4.81\cdot10^{-3}$ & $6.94\cdot10^{-2}$ & $7.97\cdot10^{-2}$ \\
 		\hline
-		5 & $3.585, -1.852$ & $2.13\cdot10^{-4}$ & $1.47\cdot10^{-5}$ & $6.94\cdot10^{-2}$ & $7.97\cdot10^{-2}$ \\ 
+		5 & $3.585, -1.852$ & $2.13\cdot10^{-4}$ & $1.47\cdot10^{-6}$ & $3.84\cdot10^{-3}$ & $2.13\cdot10^{-4}$ \\ 
 		\hline
 	\end{tabularx}	
 \end{table}	
@@ -286,7 +287,7 @@ Function figures:
 		\hline
 		3 & $-3.779, -3.283$ & $1.13\cdot10^{-7}$ & $1.19\cdot10^{-4}$ & $1.09\cdot10^{-2}$ & $4.61\cdot10^{-3}$ \\ 
 		\hline
-		4 & $-3.779, -3.283$ & $1.13\cdot10^{-7}$ & $2.93\cdot10^{-9}$ & $1.09\cdot10^{-2}$ & $4.61\cdot10^{-3}$ \\
+		4 & $-3.779, -3.283$ & $1.13\cdot10^{-7}$ & $2.93\cdot10^{-9}$ & $5.41\cdot10^{-5}$ & $1.13\cdot10^{-7}$ \\
 		\hline
 	\end{tabularx}	
 \end{table}	
@@ -303,7 +304,7 @@ Function figures:
 		\hline
 		3 & $-2.807, 3.132$ & $1.23\cdot10^{-4}$ & $3.92\cdot10^{-3}$ & $6.26\cdot10^{-2}$ & $0.139$ \\
 		\hline
-		4 & $-2.807, 3.132$ & $1.23\cdot10^{-4}$ & $3.8\cdot10^{-6}$ & $6.26\cdot10^{-2}$ & $0.139$ \\ 
+		4 & $-2.807, 3.132$ & $1.23\cdot10^{-4}$ & $3.8\cdot10^{-6}$ & $1.95\cdot10^{-3}$ & $1.23\cdot10^{-4}$ \\ 
 		\hline
 	\end{tabularx}	
 \end{table}	
@@ -349,7 +350,7 @@ Function figures:
 			\hline
 			3 & $-8.82\cdot10^{-2}, 0.72$ & $-1.031$ & $1.47\cdot10^{-3}$ & $3.36\cdot10^{-2}$ & $1.33\cdot10^{-2}$ 	\\
 			\hline		
-			4 & $-8.82\cdot10^{-2}, 0.72$ & $-1.031$ & $5.11\cdot10^{-5}$ & $3.36\cdot10^{-2}$ & $1.33\cdot10^{-2}$ 	\\
+			4 & $-8.82\cdot10^{-2}, 0.72$ & $-1.031$ & $5.11\cdot10^{-6}$ & $6.26\cdot10^{-3}$ & $4.26\cdot10^{-4}$ 	\\
 			\hline		
 		\end{tabularx}	
 	\end{table}	
@@ -366,7 +367,7 @@ Function figures:
 			\hline
 			3 & $8.82\cdot10^{-2}, -0.72$ & $-1.031$ & $1.47\cdot10^{-3}$ & $3.36\cdot10^{-2}$ & $1.33\cdot10^{-2}$ 	\\
 			\hline		
-			4 & $8.82\cdot10^{-2}, -0.72$ & $-1.031$ & $5.11\cdot10^{-5}$ & $3.36\cdot10^{-2}$ & $1.33\cdot10^{-2}$ 	\\
+			4 & $8.82\cdot10^{-2}, -0.72$ & $-1.031$ & $5.11\cdot10^{-6}$ & $6.26\cdot10^{-3}$ & $4.26\cdot10^{-4}$ 	\\
 			\hline		
 		\end{tabularx}	
 	\end{table}
@@ -383,7 +384,7 @@ Function figures:
 			\hline
 			3 & $-1.705, 0.796$ & $-0.215$ & $6.92\cdot10^{-4}$ & $2.63\cdot10^{-2}$ & $7.95\cdot10^{-3}$ \\
 			\hline
-			4 & $-1.705, 0.796$ & $-0.215$ & $4.21\cdot10^{-6}$ & $2.63\cdot10^{-2}$ & $7.95\cdot10^{-3}$ \\
+			4 & $-1.705, 0.796$ & $-0.215$ & $4.21\cdot10^{-6}$ & $2.05\cdot10^{-3}$ & $4.06\cdot10^{-5}$ \\
 			\hline
 		\end{tabularx}	
 	\end{table}	
@@ -400,7 +401,7 @@ Function figures:
 			\hline
 			3 & $1.705, -0.796$ & $-0.215$ & $6.92\cdot10^{-4}$ & $2.63\cdot10^{-2}$ & $7.95\cdot10^{-3}$ \\
 			\hline
-			4 & $1.705, -0.796$ & $-0.215$ & $4.21\cdot10^{-6}$ & $2.63\cdot10^{-2}$ & $7.95\cdot10^{-3}$ \\
+			4 & $1.705, -0.796$ & $-0.215$ & $4.21\cdot10^{-6}$ & $2.05\cdot10^{-3}$ & $4.06\cdot10^{-5}$ \\
 			\hline
 		\end{tabularx}	
 	\end{table}	
@@ -419,9 +420,8 @@ Function figures:
 			\hline
 			4 & $1.608, 0.567$ & $2.104$ & $2.3\cdot10^{-4}$ & $1.52\cdot10^{-2}$ & $1.31\cdot10^{-3}$ \\
 			\hline
-			5 & $1.608, 0.567$ & $2.104$ & $6.52\cdot10^{-7}$ & $1.52\cdot10^{-2}$ & $1.31\cdot10^{-3}$ \\
-			\hline
-						
+			5 & $1.608, 0.567$ & $2.104$ & $6.52\cdot10^{-7}$ & $8.08\cdot10^{-4}$ & $3.23\cdot10^{-6}$ \\
+			\hline					
  		\end{tabularx}	
 	\end{table}
 
@@ -439,8 +439,8 @@ Function figures:
 			\hline
 			4 & $-1.608, -0.567$ & $2.104$ & $2.3\cdot10^{-4}$ & $1.52\cdot10^{-2}$ & $1.31\cdot10^{-3}$ \\
 			\hline
-			5 & $-1.608, -0.567$ & $2.104$ & $6.52\cdot10^{-7}$ & $1.52\cdot10^{-2}$ & $1.31\cdot10^{-3}$ \\
-			\hline		
+			5 & $-1.608, -0.567$ & $2.104$ & $6.52\cdot10^{-7}$ & $8.08\cdot10^{-4}$ & $3.23\cdot10^{-6}$ \\
+			\hline	
 		\end{tabularx}	
 	\end{table}
 When we chose starting point at $x_1=-1, x_2=0.7$ or $x_1=1, x_2=-0.7$ or $x_1=0, x_2=0$ then program returned: 'local minimum or maximum does not exist'. This is caused by saddle points there. Situation can be seen on figure 9. On the other hand start points at $x_1=1.25, x_2=0.2$ and $x_1=-1.25, x_2=-0.2$ program described as neighbourhood of local maxima.
