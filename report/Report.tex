@@ -92,13 +92,13 @@ This criterion is used in our program to decide whether found point is a local m
 \section{General information about the program}
 The program was written in \textit{Matlab} environment. We use this program because we know its capabilities very well. Thanks to using \textit{Matlab} we do not need use any external libraries to parse an input (function formula) or plot function / particular steps. To handle any input formula we used internal library, which is integrated with \textit{Matlab} and can find predefined symbols in function -- \textit{symbolic math toolbox}. To design and create graphic user interface we used \textit{GUIDE} library, which is also delivered with \textit{Matlab}.
 \section{Rules for setting initial data}
-\begin{figure}[H]
-\begin{center}
-\includegraphics[scale=0.3]{images/program.png}
-\caption{GUI of our program}
-\label{program}
-\end{center}		
-\end{figure}
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[scale=0.3]{images/program.png}
+			\caption{GUI of our program}
+		\label{program}
+		\end{center}		
+	\end{figure}
 To start computing the user should go through a few steps:
 \begin{enumerate}
 \item choose one of predefined functions or type own (number 1 in figure \ref{program}),
@@ -128,12 +128,16 @@ y=x_1^4+x_2^4-0.62x_1^2-0.62x_2^2
 
 Function figures:
 	\begin{figure}[H]
-		\includegraphics[width=12cm]{four_3d.jpg}
+		\begin{center}
+			\includegraphics[width=12cm]{four_3d.jpg}
 		\caption{Analyzed function 3D view.}
+		\end{center}
 	\end{figure}
 	\begin{figure}[H]
+		\begin{center}
 			\includegraphics[width=12cm]{four_cont.jpg}
-		\caption{Analyzed function contour view.}
+			\caption{Analyzed function contour view.}
+		\end{center}
 	\end{figure}	
 
 	\begin{table}[H]
@@ -204,8 +208,10 @@ Function figures:
 	When we chose starting point at $x_1=0, x_2=0$ then program returned: 'local maximum. Computation stopped'. This is caused by checking Silvester's criterion. Even if algorithm find local extrema it can distinguish maxima or minima. 
 	
 	\begin{figure}[H]
-		\includegraphics[width=13.5cm]{four_results.png}
-		\caption{Location of four minima.}
+		\begin{center}
+			\includegraphics[width=13.5cm]{four_results.png}
+			\caption{Location of four minima.}
+		\end{center}
 	\end{figure}
 
 
@@ -217,12 +223,16 @@ Function equation:
 
 Function figures:
 \begin{figure}[H]
-	\includegraphics[width=8cm]{himm.png}
-	\caption{Analyzed function 3D view.}
+	\begin{center}
+		\includegraphics[width=8cm]{himm.png}
+		\caption{Analyzed function 3D view.}
+	\end{center}
 \end{figure}
 \begin{figure}[H]
-	\includegraphics[width=8cm]{himm_count.png}
-	\caption{Analyzed function contour view.}
+	\begin{center}
+		\includegraphics[width=8cm]{himm_count.png}
+		\caption{Analyzed function contour view.}
+	\end{center}
 \end{figure}
 
 \begin{table}[H]
@@ -299,8 +309,10 @@ Function figures:
 \end{table}	
 When we chose starting point at $x_1=-3, x_2=0$ or $x_1=0.1, x_2=2.8$ then program returned: 'local minimum or maximum does not exist'. This is caused by saddle points there. Situation can be seen on figure 6. And at point $x_1=0, x_2=0$ we found local maxima. Program returned: 'local maximum. Computation stopped'. 
 \begin{figure}[H]
-	\includegraphics[width=16cm]{himm_results.png}
+	\begin{center}
+		\includegraphics[width=16cm]{himm_results.png}
 		\caption{Location of four minima and saddle point.}
+	\end{center}
 \end{figure} 
 
 \subsection{Geem test function}
@@ -311,12 +323,16 @@ y=4x_1^2-2.1x_1^4+\frac{1}{3}x_1^6+x_1x_2-4x_2^2+4x_2^4
 
 Function figures:
 \begin{figure}[H]
-	\includegraphics[width=8cm]{gem_3D.png}
-	\caption{Analyzed function 3D view.}
+	\begin{center}
+		\includegraphics[width=8cm]{gem_3D.png}
+		\caption{Analyzed function 3D view.}
+	\end{center}
 \end{figure}
 \begin{figure}[H]
-	\includegraphics[width=8cm]{gem_cont.png}
-	\caption{Analyzed function contour view.}
+	\begin{center}
+		\includegraphics[width=8cm]{gem_cont.png}
+		\caption{Analyzed function contour view.}
+	\end{center}
 \end{figure}
 
 
@@ -430,8 +446,10 @@ Function figures:
 When we chose starting point at $x_1=-1, x_2=0.7$ or $x_1=1, x_2=-0.7$ or $x_1=0, x_2=0$ then program returned: 'local minimum or maximum does not exist'. This is caused by saddle points there. Situation can be seen on figure 9. On the other hand start points at $x_1=1.25, x_2=0.2$ and $x_1=-1.25, x_2=-0.2$ program described as neighbourhood of local maxima.
 	
 \begin{figure}[H]
-	\includegraphics[width=16cm]{gem_results.png}
-	\caption{Location of four minima and saddle points.}
+	\begin{center}
+		\includegraphics[width=16cm]{gem_results.png}
+		\caption{Location of four minima and saddle points.}
+	\end{center}
 \end{figure}		
 
 \subsection{Practical example - spring-carts system}
@@ -440,8 +458,10 @@ Interpretation:
 Figure 10 shows two frictionless rigid bodies (carts) A and B connected by three linear elastic springs having spring constants $k_1, k_2, k_3$. The springs are at their natural positions when the applied force $P$ is zero. The task is to find the displacement $x_1$ and $x_2$ under the force $P$ by using principle of minimum potential energy.\cite{practical}
 
 \begin{figure}[H]
-	\includegraphics[width=16cm]{springs.png}
-	\caption{Spring-cart system.}
+	\begin{center}
+		\includegraphics[width=16cm]{springs.png}
+		\caption{Spring-cart system.}
+	\end{center}
 \end{figure}
 
 Function equation:
@@ -453,12 +473,16 @@ $k_1=12, k_2=30, k_3=15, P=100$.
 \\\\
 Function figures:
 \begin{figure}[H]
-	\includegraphics[width=8cm]{springs_3D.jpg}
-	\caption{Analyzed function 3D view.}
+	\begin{center}
+		\includegraphics[width=8cm]{springs_3D.jpg}
+		\caption{Analyzed function 3D view.}
+	\end{center}
 \end{figure}
 \begin{figure}[H]
-	\includegraphics[width=8cm]{springs_cont.png}
-	\caption{Analyzed function contour view.}
+	\begin{center}
+		\includegraphics[width=8cm]{springs_cont.png}
+		\caption{Analyzed function contour view.}
+	\end{center}
 \end{figure}
 
 	\begin{table}[H]
@@ -475,8 +499,10 @@ Function figures:
 	\end{table}
 
 \begin{figure}[H]
-	\includegraphics[width=16cm]{spirngs_results.png}
-	\caption{Founded minimum.}
+	\begin{center}
+		\includegraphics[width=16cm]{spirngs_results.png}
+		\caption{Found minimum.}
+	\end{center}
 \end{figure}	
 
 
